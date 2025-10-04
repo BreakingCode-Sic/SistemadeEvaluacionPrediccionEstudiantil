@@ -1,4 +1,3 @@
-
 from Colors import Colors
 from datetime import datetime
 from Menu_functions import *
@@ -57,7 +56,7 @@ def main():
         # Process the choice using match statement
         result =   get_user_input(choice)
 
-        if result <= 0:
+        if result == 0:
             break
 
 if __name__ == "__main__":
