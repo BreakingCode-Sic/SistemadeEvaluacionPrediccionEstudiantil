@@ -1,32 +1,18 @@
-
 import os
 import sys
+from Colors import Colors
 from datetime import datetime
+from Menu_functions import *
 
-class Colors:
-    """ANSI color codes for terminal styling"""
-    HEADER = '\033[95m'
-    BLUE = '\033[94m'
-    CYAN = '\033[96m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    ENDC = '\033[0m'  # End color
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-def clear_screen():
-    """Clear the terminal screen"""
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 def print_header():
     header = f"""
 {Colors.CYAN}
 ╔══════════════════════════════════════════════════════════════╗
 ║                                                              ║
-║        🎓 SISTEMA INTELIGENTE DE CALIFICACIONES 🎓          ║
+║        🎓 SISTEMA INTELIGENTE DE CALIFICACIONES 🎓           ║
 ║                                                              ║
-║              📊 Predicción de Notas Estudiantiles 📊        ║
+║              📊 Predicción de Notas Estudiantiles 📊         ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝{Colors.ENDC}
 
@@ -58,45 +44,7 @@ def print_menu():
 """
     print(menu)
 
-def get_user_input():
-    """Get user input with styled prompt"""
-    prompt = f"{Colors.CYAN}🎯 Seleccione una opción (1-8): {Colors.ENDC}"
-    return input(prompt).strip()
 
-def print_success_message(message):
-    """ success message with green styling"""
-    print(f"\n{Colors.GREEN}✅ {message}{Colors.ENDC}")
-
-def print_error_message(message):
-    """error message with red styling"""
-    print(f"\n{Colors.RED}❌ {message}{Colors.ENDC}")
-
-
-def print_info_message(message):
-    """ info message with blue styling"""
-    print(f"\n{Colors.BLUE}ℹ️  {message}{Colors.ENDC}")
-
-
-def wait_for_enter():
-    """Wait for user to press Enter"""
-    input(f"\n{Colors.YELLOW}📱 Presione Enter para continuar...{Colors.ENDC}")
-
-def print_goodbye():
-    """Print a goodbye message"""
- 
-    goodbye = f"""
-{Colors.CYAN}╔══════════════════════════════════════════════════════════════╗
-║                                                              ║
-║                  👋 ¡HASTA LUEGO! 👋                       ║
-║                                                              ║
-║          Gracias por usar el Sistema de Predicción          ║
-║                    de Calificaciones                        ║
-║                                                              ║
-║                  🎓 ¡Que tengas un buen día! 🎓            ║
-║                                                              ║
-╚══════════════════════════════════════════════════════════════╝{Colors.ENDC}
-"""
-    print(goodbye)
 
 # Main menu loop
 def main():
