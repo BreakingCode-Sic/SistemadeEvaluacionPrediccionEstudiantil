@@ -47,19 +47,17 @@ def print_menu():
 
 
 def main():
-    df = leer_datos()
     while True:
         clear_screen()
         print_header()
         print_menu()
-
         
         # Get user input
         prompt = f"{Colors.CYAN}🎯 Seleccione una opción (1-11): {Colors.ENDC}"
         choice = input(prompt).strip()
         
         # Process the choice using match statement
-        df, result =   get_user_input(choice, df)
+        result =   get_user_input(choice)
 
         if result == 0:
             break
