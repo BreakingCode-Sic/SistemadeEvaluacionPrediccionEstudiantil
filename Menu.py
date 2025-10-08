@@ -42,25 +42,79 @@ def print_menu():
     print(menu)
 
 
+def valid_menu_input(opcion, opciones_validas):
+    #Valida la opcion del menu
+
+    try:
+        option_num = int(opcion)
+        if option_num not in opciones_validas:
+            return False, f"Opcion debe estar entre {min(opciones_validas)} y {max(opciones_validas)}"
+        return True, ""
+    except ValueError:
+        return False, "La opcion debe ser un numero valido"
+
+def valid_dataframe(df):
+     # Valida que el DataFrame sea usable
+
+    if df is None:
+        return False, "No se pudo cargar los datos del sistema"
+
+    if df.empty:
+        return False, "El sistema no tiene datos de estudiantes registrados"
+
+    # Verificar columnas esenciales
+
+    columnas_esenciales = ['nombre_estudiante', 'area', 'nota']
+    for col in columnas_esenciales:
+        if col not in df.columns:
+            return False, f"Falta la columna esencial '{col}' en los datos"
+
+    return True, ""
 
 def main():
-    df = leer_datos()
+    try:
+        print(f"{Colors.YELLOW}Cargando datos del sistema...{Colors.ENDC}")
+        df = leer_datos()
+
+        is_valid, message = valid_dataframe(df)
+
+        if not is_valid:
+            print(f"{Colors.RED}{message}{Colors.ENDC}")
+            input(f"{Colors.YELLOW}Presiona Enter para salir...{Colors.ENDC}")
+            return
+
+    except Exception as e:
+        print(f"{Colors.RED}Error critico al iniciar el sistema: {e}{Colors.ENDC}")
+        input(f"{Colors.YELLOW}Presiona Enter para salir...{Colors.ENDC}")
+
+    valid_options = [0 , 1, 2, 3, 4, 5, 6, 7]
     while True:
-        clear_screen()
-        print_header()
-        print_menu()
+        try:
+            clear_screen()
+            print_header()
+            print_menu()
 
-        
-        # Get user input
-        prompt = f"{Colors.CYAN}🎯 Seleccione una opción (0-8): {Colors.ENDC}"
-        choice = input(prompt).strip()
-        
-        # Process the choice using match statement
-        df, result =   get_user_input(choice, df)
 
-        if result == 0:
-            break
+            # Get user input
+            prompt = f"{Colors.CYAN}🎯 Seleccione una opción (0-7): {Colors.ENDC}"
+            choice = input(prompt).strip()
+
+            is_valid, message = valid_menu_input(choice, valid_options)
+
+            if not is_valid:
+                print(f"{Colors.RED}{message}{Colors.ENDC}")
+                input(f"{Colors.YELLOW}Presiona Enter para continuar...{Colors.ENDC}")
+
+
+            # Process the choice using match statement
+            df, result =   get_user_input(choice, df)
+
+            if result == 0:
+                break
+        except Exception as e:
+            print(f"{Colors.RED}Error inesperado: {e}{Colors.ENDC}")
+            input(f"{Colors.YELLOW}Presiona Enter para continuar...{Colors.ENDC}")
+
 
 if __name__ == "__main__":
     main()
-
