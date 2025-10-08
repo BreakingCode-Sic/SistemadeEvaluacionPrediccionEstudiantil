@@ -870,4 +870,3 @@ def student_grade_chat(df,name,grade, cl_name, cat, asg, aula ):
     
     return ax1, ax2, ax3, ax4, ax5, ax6, ax7
 
-

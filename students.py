@@ -4,6 +4,8 @@
 import os
 import pandas as pd
 from datetime import datetime
+from Colors import Colors
+import unicodedata
 
 # Resolve the Excel file relative to this script's directory so the file
 # is found when running commands from any working directory.
@@ -29,6 +31,15 @@ def leer_datos() -> pd.DataFrame:
 def guardar_datos(df: pd.DataFrame):
     """Guarda los datos en el Excel."""
     df.to_excel(ARCHIVO_EXCEL, sheet_name=HOJA, index=False)
+
+#Funcion para quitar acentos al momento de buscar estudiantes
+def quitar_acentos(texto):
+    if not isinstance(texto, str):
+        return texto
+    return ''.join(
+        c for c in unicodedata.normalize('NFD', texto)
+        if unicodedata.category(c) != 'Mn'
+    )
 
 # Temporal database for testing
 # students_data = {
@@ -138,15 +149,8 @@ def get_database_stats(df):
         promedio = round(df['nota'].mean(), 2)
         mayor = df['nota'].max()
         menor = df['nota'].min()
-        total = len(df)
+        total = df['id_estudiante'].nunique()
 
-        print("\n📊 ESTADÍSTICAS GENERALES:")
-        print("=" * 40)
-        print(f"👥 Total de estudiantes: {total}")
-        print(f"📈 Promedio general de notas: {promedio}")
-        print(f"🏆 Nota más alta: {mayor}")
-        print(f"📉 Nota más baja: {menor}")
-        print("=" * 40)
 
         return {
             'total_students': total,
@@ -172,10 +176,12 @@ def update_student(df, id_estudiante, campo, nuevo_valor):
         return df
 
 def get_students_by_area(df, area):
-    return df[df['area'].str.lower() == area.lower()]
+    area_normalizada = quitar_acentos(area.lower())
+    return df[df['area'].apply(lambda x: quitar_acentos(str(x).lower()) == area_normalizada)]
 
 def get_students_by_subject(df, asignatura):
-    return df[df['asignatura'].str.lower() == asignatura.lower()]
+    asignatura_normalizada = quitar_acentos(asignatura.lower())
+    return df[df['asignatura'].apply(lambda x: quitar_acentos(str(x).lower()) == asignatura_normalizada)]
 
 def predict_student_score(df, id_estudiante, nueva_nota):
     student_notes = df[df['id_estudiante'] == id_estudiante]['nota'].tolist()
@@ -193,7 +199,10 @@ def students_at_risk(df, umbral):
     if not riesgo:
         print("✅ Ningún estudiante está en riesgo")
     else:
-        print(f"⚠️ Estudiantes en riesgo (promedio < {umbral}): {riesgo}")
+        print(f"⚠️ Estudiantes en riesgo (promedio < {umbral}): ")
+        df_riesgo = df[df['id_estudiante'].isin(riesgo)][['id_estudiante', 'nombre_estudiante']].drop_duplicates()
+        for _, row in df_riesgo.iterrows():
+            print(f"🆔 ID: {row['id_estudiante']} - 👤 Nombre: {row['nombre_estudiante']}")
     return riesgo
 
 def average_by_subject(df, asignatura):
