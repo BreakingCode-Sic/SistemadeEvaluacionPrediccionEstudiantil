@@ -35,15 +35,16 @@ def print_menu():
 {Colors.CYAN}   📃 [5]{Colors.ENDC} {Colors.BOLD}Listar todos los estudiantes{Colors.ENDC}
 {Colors.CYAN}   🔮 [6]{Colors.ENDC} {Colors.BOLD}Predecir calificaciones y posibles fortalezas{Colors.ENDC}
 {Colors.CYAN}   📊 [7]{Colors.ENDC} {Colors.BOLD}Ver estadísticas generales{Colors.ENDC}
+{Colors.CYAN}   📈 [8]{Colors.ENDC} {Colors.BOLD}Gráfico de habilidades del estudiante{Colors.ENDC}
+{Colors.CYAN}   🎯 [9]{Colors.ENDC} {Colors.BOLD}Dashboard completo del estudiante{Colors.ENDC}
 {Colors.RED}   🚪 [0]{Colors.ENDC} {Colors.BOLD}Salir del sistema{Colors.ENDC}
 
 
 """
     print(menu)
 
-
+#Valida la opcion del menu
 def valid_menu_input(opcion, opciones_validas):
-    #Valida la opcion del menu
 
     try:
         option_num = int(opcion)
@@ -87,7 +88,7 @@ def main():
         print(f"{Colors.RED}Error critico al iniciar el sistema: {e}{Colors.ENDC}")
         input(f"{Colors.YELLOW}Presiona Enter para salir...{Colors.ENDC}")
 
-    valid_options = [0 , 1, 2, 3, 4, 5, 6, 7]
+    valid_options = [0 , 1, 2, 3, 4, 5, 6, 7, 8, 9]
     while True:
         try:
             clear_screen()
@@ -96,7 +97,7 @@ def main():
 
 
             # Get user input
-            prompt = f"{Colors.CYAN}🎯 Seleccione una opción (0-7): {Colors.ENDC}"
+            prompt = f"{Colors.CYAN}🎯 Seleccione una opción (0-9): {Colors.ENDC}"
             choice = input(prompt).strip()
 
             is_valid, message = valid_menu_input(choice, valid_options)
