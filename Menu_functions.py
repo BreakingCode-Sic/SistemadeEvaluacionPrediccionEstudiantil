@@ -475,8 +475,9 @@ def chart(df, name, cat, grade, col_name):
     while len(nota) != len(angle):
         if len(angle) > len(nota):
             nota += nota[:1]  #close the angle
+            #TODO Arreglo de la funcion nota =- nota[:1]
         elif len(nota) > len(angle):
-            nota -= nota[:1]
+            del nota[:1]
 
     # -- plot --
     try:

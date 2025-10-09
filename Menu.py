@@ -1,3 +1,4 @@
+import pandas as pd
 from Colors import Colors
 from datetime import datetime
 from Menu_functions import *
@@ -87,6 +88,7 @@ def main():
     except Exception as e:
         print(f"{Colors.RED}Error critico al iniciar el sistema: {e}{Colors.ENDC}")
         input(f"{Colors.YELLOW}Presiona Enter para salir...{Colors.ENDC}")
+        return
 
     valid_options = [0 , 1, 2, 3, 4, 5, 6, 7, 8, 9]
     while True:
@@ -108,7 +110,7 @@ def main():
 
 
             # Process the choice using match statement
-            df, result =   get_user_input(choice, df)
+            df, result = get_user_input(choice, df)
 
             if result == 0:
                 break
