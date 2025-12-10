@@ -163,51 +163,6 @@ def get_user_input(choice, df):
             # Al salir del submenu volver al menú principal
             return df, 5
             
-        #       case '8':
-        #     print_info_message("Ver estudiantes por área")
-        #     area_input = input(f"{Colors.CYAN}📚 Ingrese el área: {Colors.ENDC}")
-        #     estudiantes = get_students_by_area(df, area_input)
-            
-        #     if estudiantes.empty:
-        #         print(f"❌ No hay estudiantes en el área {area_input}")
-        #     else:
-        #         print(f"\n📋 Estudiantes en el área {area_input}:")
-        #         print(estudiantes.to_string(index=False))
-            
-        #     wait_for_enter()
-        #     return df, 8
-        
-        # case '9':
-        #     print_info_message("Ver estudiantes por asignatura")
-        #     subject_input = input(f"{Colors.CYAN}📖 Ingrese la asignatura: {Colors.ENDC}")
-        #     estudiantes = get_students_by_subject(df, subject_input)
-            
-        #     if estudiantes.empty:
-        #         print(f"❌ No hay estudiantes en la asignatura {subject_input}")
-        #     else:
-        #         print(f"\n📋 Estudiantes en la asignatura {subject_input}:")
-        #         print(estudiantes.to_string(index=False))
-            
-        #     wait_for_enter()
-        #     return df, 9
-        
-        # case '10':
-        #     print_info_message("Estudiantes en riesgo")
-            # try:
-            #     umbral_input = input(f"{Colors.CYAN}⚠️ Ingrese el umbral de riesgo (por defecto 60): {Colors.ENDC}")
-            #     umbral = float(umbral_input) if umbral_input.strip() != "" else 60
-            # except ValueError:
-            #     print("❌ Valor inválido, se usará el umbral por defecto (60)")
-            #     umbral = 60
-            # #Arreglo de la funcion students_at_risk (umbral estaba declarado 2 veces por defecto)
-            # riesgo = students_at_risk(df, umbral)
-            # if riesgo:
-            #     print(f"📝 IDs de estudiantes en riesgo: {riesgo}")
-            
-        #     wait_for_enter()
-        #     return df, 10
-        #     return df, 5
-            
         case '6':
             print_info_message("Predecir calificaciones")
             
