@@ -1,6 +1,3 @@
-📣 **README actualizado** → **¡Ahora con IA y Streamlit!**
-
----
 
 # 🧠 Sistema Inteligente de Evaluación y Predicción Estudiantil  
 **Con IA, NLP y Visualización Interactiva**
