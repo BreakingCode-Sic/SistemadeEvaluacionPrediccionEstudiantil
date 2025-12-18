@@ -105,6 +105,9 @@ for i, r in top.iterrows():
     st.success(f"**{r['nombre_area']}** — {r['probabilidad']:.1%}")
     st.caption(r["descripcion"])
 
+if row["num_obs"] < 15:
+    st.warning("⚠️ Prediccion con baja confianza: menos de 15 observaciones.")
+
 # probabilidades por areas
 
 probs = modelo_area.predict_proba(X_pred)[0]

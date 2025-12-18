@@ -13,8 +13,15 @@ from nltk.corpus import stopwords
 import nltk
 import unicodedata
 
-
 MODEL_PATH = "modelo_riesgo.pkl"
+
+# deteccion de pickle corrupto y lo borra
+if os.path.exists(MODEL_PATH):
+    try:
+        with open(MODEL_PATH, "rb") as f:
+            _ = pickle.load(f)  # intenta leer
+    except (EOFError, pickle.UnpicklingError):
+        os.remove(MODEL_PATH)
 
 def limpiar_texto(t):
     if not isinstance(t, str):
@@ -46,11 +53,12 @@ def extraer_features(texto):
 
 
 def cargar_modelo_nlp():
+    nltk.download("stopwords", quiet=True)
+
     if os.path.exists(MODEL_PATH):
         with open(MODEL_PATH, "rb") as f:
             return pickle.load(f)
 
-    nltk.download("stopwords", quiet=True)
     STOPWORDS_ES = stopwords.words("spanish")
 
     df_train = pd.read_csv("datasets/nlp_observaciones_entrenamiento.csv")

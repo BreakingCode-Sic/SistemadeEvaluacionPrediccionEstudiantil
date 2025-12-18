@@ -1,9 +1,11 @@
+import os
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
 from core.data_loader import load_base_data
-from core.nlp import cargar_modelo_nlp
+from core.nlp import cargar_modelo_nlp, MODEL_PATH
 from core.models_riesgo import calcular_riesgo
 
 
@@ -77,6 +79,15 @@ c1, c2, c3 = st.columns(3)
 c1.metric("Total estudiantes", len(df_riesgo))
 c2.metric("Riesgo promedio", f"{df_riesgo['Rd'].mean():.1%}")
 c3.metric("Alto riesgo (Rd > 0.6)", (df_riesgo["Rd"] > 0.6).sum())
+
+# ─── Botón de re-entrenamiento ───
+if st.button("🔄 Re-entrenar modelo"):
+    if os.path.exists(MODEL_PATH):
+        os.remove(MODEL_PATH)
+    st.cache_resource.clear()           # borra el cache de @st.cache_resource
+    modelo_nlp = cargar_modelo_nlp()    # vuelve a entrenar
+    st.success("Modelo re-entrenado con los datos actuales.")
+    st.rerun()                          # recarga la página con los nuevos valores
 
 
 # grafico top riesgo
