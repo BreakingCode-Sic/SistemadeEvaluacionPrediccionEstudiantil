@@ -654,11 +654,12 @@ with st.form("student_form"):
     transporte_normalizado = transporte_score / sum(transporte_pesos.values())
     
     st.subheader("Acceso a servicios básicos en casa")
+    st.caption("Esta sección se refiere a servicios básicos del hogar (independientes de los recursos de estudio preguntados anteriormente).")
     col_serv1, col_serv2 = st.columns(2)
     with col_serv1:
         serv_agua = st.checkbox("💧 Agua potable")
         serv_luz = st.checkbox("💡 Electricidad")
-        serv_internet = st.checkbox("📶 Internet")
+        serv_internet = st.checkbox("📶 Servicio básico de internet en el hogar (uso general)")
     with col_serv2:
         serv_saneamiento = st.checkbox("🚽 Saneamiento")
         serv_ninguno = st.checkbox("❌ Ninguno de los anteriores")
