@@ -271,11 +271,28 @@ with st.form("student_form"):
     st.subheader("Acceso a servicios de salud")
     col_sal1, col_sal2 = st.columns(2)
     with col_sal1:
-        sal_hospital = st.checkbox("🏥 Hospital")
-        sal_clinica = st.checkbox("🩺 Clínica")
+        sal_hospital = st.checkbox("🏥 Hospital", key="sal_hospital")
+        sal_clinica = st.checkbox("🩺 Clínica", key="sal_clinica")
     with col_sal2:
-        sal_seguro = st.checkbox("📋 Seguro médico")
-        sal_ninguno = st.checkbox("❌ Ningún acceso")
+        sal_seguro = st.checkbox("📋 Seguro médico", key="sal_seguro")
+        sal_ninguno = st.checkbox("❌ Ningún acceso", key="sal_ninguno")
+
+    # Asegurar que "Ningún acceso" sea excluyente con las demás opciones
+    if st.session_state.get("sal_ninguno"):
+        st.session_state["sal_hospital"] = False
+        st.session_state["sal_clinica"] = False
+        st.session_state["sal_seguro"] = False
+    elif any(
+        st.session_state.get(k, False)
+        for k in ("sal_hospital", "sal_clinica", "sal_seguro")
+    ):
+        st.session_state["sal_ninguno"] = False
+
+    # Actualizar variables locales según el estado validado
+    sal_hospital = st.session_state.get("sal_hospital", False)
+    sal_clinica = st.session_state.get("sal_clinica", False)
+    sal_seguro = st.session_state.get("sal_seguro", False)
+    sal_ninguno = st.session_state.get("sal_ninguno", False)
     
     # Calcular puntaje de acceso a salud
     salud_acceso_pesos = {
