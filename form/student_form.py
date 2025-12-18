@@ -10,6 +10,55 @@ st.set_page_config(
     layout="wide"
 )
 
+# Cached function to load and calculate statistics
+@st.cache_data
+def load_statistics(csv_file="evaluaciones_estudiantes.csv"):
+    """
+    Load CSV data and calculate statistics.
+    This function is cached to avoid recalculating on every page render.
+    """
+    if not os.path.exists(csv_file):
+        return {
+            "exists": False,
+            "total": 0,
+            "stats": None
+        }
+    
+    try:
+        df = pd.read_csv(csv_file)
+    except pd.errors.EmptyDataError:
+        return {
+            "exists": True,
+            "total": 0,
+            "stats": None
+        }
+    
+    total = len(df)
+    
+    if df.empty:
+        return {
+            "exists": True,
+            "total": total,
+            "stats": None
+        }
+    
+    # Calculate statistics if required columns exist
+    required_columns = {"Seguridad_Barrio", "Motivacion_Estudio", "Apoyo_Familiar"}
+    if required_columns.issubset(df.columns):
+        stats = {
+            "avg_seguridad": df["Seguridad_Barrio"].mean(),
+            "avg_motivacion": df["Motivacion_Estudio"].mean(),
+            "avg_apoyo": df["Apoyo_Familiar"].mean()
+        }
+    else:
+        stats = "missing_columns"
+    
+    return {
+        "exists": True,
+        "total": total,
+        "stats": stats
+    }
+
 # Custom CSS for better styling
 st.markdown("""
 <style>
@@ -936,33 +985,26 @@ st.sidebar.info(
 )
 
 st.sidebar.title("📊 Estadísticas")
-if os.path.exists("evaluaciones_estudiantes.csv"):
-    try:
-        df = pd.read_csv("evaluaciones_estudiantes.csv")
-    except pd.errors.EmptyDataError:
-        df = pd.DataFrame()
+# Use cached function to load statistics
+stats_data = load_statistics()
 
-    st.sidebar.metric("Total de Evaluaciones", len(df))
-
-    if not df.empty:
-        required_columns = {"Seguridad_Barrio", "Motivacion_Estudio", "Apoyo_Familiar"}
-        if required_columns.issubset(df.columns):
-            st.sidebar.markdown("---")
-            st.sidebar.subheader("📈 Resumen Rápido")
-            avg_seguridad = df["Seguridad_Barrio"].mean()
-            avg_motivacion = df["Motivacion_Estudio"].mean()
-            avg_apoyo = df["Apoyo_Familiar"].mean()
-
-            st.sidebar.metric("Seguridad Promedio", f"{avg_seguridad:.1f}/5")
-            st.sidebar.metric("Motivación Promedio", f"{avg_motivacion:.1f}/5")
-            st.sidebar.metric("Apoyo Familiar Promedio", f"{avg_apoyo:.1f}/5")
-        else:
+if not stats_data["exists"]:
+    st.sidebar.metric("Total de Evaluaciones", 0)
+else:
+    st.sidebar.metric("Total de Evaluaciones", stats_data["total"])
+    
+    if stats_data["stats"] is not None:
+        if stats_data["stats"] == "missing_columns":
             st.sidebar.warning(
                 "No se pueden calcular estadísticas porque faltan columnas requeridas "
                 "en el archivo de evaluaciones."
             )
-else:
-    st.sidebar.metric("Total de Evaluaciones", 0)
+        else:
+            st.sidebar.markdown("---")
+            st.sidebar.subheader("📈 Resumen Rápido")
+            st.sidebar.metric("Seguridad Promedio", f"{stats_data['stats']['avg_seguridad']:.1f}/5")
+            st.sidebar.metric("Motivación Promedio", f"{stats_data['stats']['avg_motivacion']:.1f}/5")
+            st.sidebar.metric("Apoyo Familiar Promedio", f"{stats_data['stats']['avg_apoyo']:.1f}/5")
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("**Samsung Innovation Campus Hackathon 2025** 🚀")
