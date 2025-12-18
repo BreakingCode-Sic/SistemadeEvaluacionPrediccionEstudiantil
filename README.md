@@ -33,7 +33,7 @@ Sistema que **predice riesgo de deserción**, **recomienda áreas académicas/pr
 ## 📦 Librerías que necesitas instalar
 
 ```bash
-pip install streamlit pandas numpy matplotlib seaborn scikit-learn nltk imbalanced-learn scipy seaborn
+pip install streamlit pandas numpy matplotlib seaborn scikit-learn nltk imbalanced-learn scipy seaborn 
 ```
 
 ---

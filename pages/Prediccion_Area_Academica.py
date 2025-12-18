@@ -44,7 +44,7 @@ df_full, modelo_area, areas_df = load_all()
 
 # seleccion estudiante
 
-st.subheader("🎓 Selecciona un estudiante")
+st.subheader("🎓 Estudiante")
 
 names = (
     df_full["nombre_estudiante"]
@@ -54,7 +54,7 @@ names = (
     .unique()
 )
 
-sel = st.selectbox("Estudiante", names)
+sel = st.selectbox("Selecciona un estudiante", names)
 
 row = df_full[df_full["nombre_estudiante"] == sel].iloc[0]
 
@@ -70,7 +70,7 @@ c3.metric("Ambiente (F)", f"{row['F']:.2f}")
 
 # prediccion de area
 
-st.subheader("🎯 area recomendada")
+st.subheader("🎯 Area Recomendada")
 
 sc, sn, ss = calc_scores(row["observacion"]) if isinstance(row["observacion"], list) else (0,0,0)
 var_F = 0 
@@ -119,16 +119,16 @@ prob_df = (
     .sort_values("probabilidad", ascending=False)
 )
 
-st.write("### 📊 Probabilidad por area")
+st.write("### 📊 Probabilidad Por Area")
 st.dataframe(
-    prob_df.style.format({"probabilidad": "{:.2%}"}),
+    prob_df.style.format({"probabilidad": "{:.1%}"}),
     use_container_width=True
 )
 
 
 # grafico radial de areas de estudio
 
-st.write("### 🧭 Distribucion de probabilidades")
+st.write("### 🧭 Recomendacion")
 
 labels = prob_df["nombre_area"].tolist()
 values = prob_df["probabilidad"].tolist()
@@ -153,11 +153,11 @@ ax.spines["polar"].set_visible(False)
 ax.set_ylim(0, 1)
 
 st.pyplot(fig, use_container_width=False)
-
+st.write(r"###### *Nota:* La recomendación realizada en este grafico se basan en el redimiento del estudiante. ")
 
 # observaciones
 
-st.subheader("📝 Observaciones del estudiante")
+st.subheader("📝 Observaciones")
 
 if isinstance(row["observacion"], list) and len(row["observacion"]) > 0:
     with st.expander("Ver observaciones"):
