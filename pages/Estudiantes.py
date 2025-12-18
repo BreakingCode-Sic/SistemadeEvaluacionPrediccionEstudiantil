@@ -3,9 +3,28 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import seaborn as sns
+from core.build_dataset import build_master_dataset
+from core.nlp import cargar_modelo_nlp
 
 # configuracion streamlit
 st.set_page_config(page_title="Gestion de Estudiantes", page_icon="👥", layout="wide")
+
+
+st.subheader("⚙️ Dataset maestro")
+
+if st.button("🔄 Regenerar dataset académico"):
+    with st.spinner("Procesando datos académicos..."):
+        modelo_nlp = cargar_modelo_nlp()
+
+        path = build_master_dataset(
+            anio_academico="2025-2026",
+            semestre=1,
+            modelo_nlp=modelo_nlp
+        )
+
+    st.success("Dataset generado correctamente")
+    st.code(path)
+    st.rerun()
 
 # carga y preproceso
 @st.cache_data(show_spinner=False)

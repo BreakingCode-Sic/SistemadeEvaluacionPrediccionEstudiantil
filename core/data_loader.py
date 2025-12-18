@@ -16,3 +16,10 @@ def load_base_data():
         "obs": load_csv("observaciones.csv"),
         "areas": load_csv("areas_estudio.csv"),
     }
+
+
+def load_master():
+    return pd.read_csv("datasets/master/df_master_2025-2026_1.csv")
+
+def load_areas():
+    return pd.read_csv("datasets/areas_estudio.csv")

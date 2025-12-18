@@ -17,7 +17,7 @@ st.set_page_config(
 )
 
 st.title("⚠️ Riesgo de Desercion Escolar")
-st.caption("Factores académicos + análisis de observaciones (NLP)")
+st.caption("Factores academicos + análisis de observaciones (NLP)")
 
 
 # carga de datos
@@ -29,27 +29,36 @@ def load_riesgo_data():
     rend = data["rend"]
     obs = data["obs"]
 
-    # --- nota promedio ---
+    # nota promedio
     periodos = ["P1", "P2", "P3", "P4"]
     rend["nota"] = rend["CF"].fillna(rend[periodos].mean(axis=1))
     notas = rend.groupby("id_estudiante")["nota"].mean().reset_index(name="nota_promedio")
 
-    # --- asistencia ---
+    # asistencia
     asist = rend.groupby("id_estudiante")["asistencia"].mean().reset_index(name="asistencia")
 
-    # --- observaciones ---
+    # observaciones
     obs_est = (
         obs.groupby("id_estudiante")["observacion"]
         .apply(lambda x: " | ".join(x))
         .reset_index(name="observaciones")
     )
+    
+    # contexto formulario
+    csv_path = os.path.join("datasets", "contexto_formulario.csv")
+    if os.path.exists(csv_path):
+        df_cs = pd.read_csv(csv_path)
+    else:
+        df_cs = pd.DataFrame(columns=["id_estudiante", "CS"])
 
-    # --- merge ---
+    # merge
     df = (
         est.merge(notas, on="id_estudiante", how="left")
            .merge(asist, on="id_estudiante", how="left")
            .merge(obs_est, on="id_estudiante", how="left")
+           .merge(df_cs, on="id_estudiante", how="left")
     )
+    df["CS"] = df["CS"].fillna(0.5)  # valor por defecto si no hay formulario
 
     return df
 
@@ -80,7 +89,7 @@ c1.metric("Total estudiantes", len(df_riesgo))
 c2.metric("Riesgo promedio", f"{df_riesgo['Rd'].mean():.1%}")
 c3.metric("Alto riesgo (Rd > 0.6)", (df_riesgo["Rd"] > 0.6).sum())
 
-# ─── Botón de re-entrenamiento ───
+# Boton de re-entrenamiento
 if st.button("🔄 Re-entrenar modelo"):
     if os.path.exists(MODEL_PATH):
         os.remove(MODEL_PATH)
@@ -98,7 +107,7 @@ top = df_riesgo.head(5)
 
 fig, ax = plt.subplots(figsize=(8, 4))
 ax.barh(top["nombre_estudiante"], top["Rd"])
-ax.set_xlabel("Riesgo de deserción (Rd)")
+ax.set_xlabel("Riesgo de desercion (Rd)")
 ax.set_title("Top 5 estudiantes con mayor riesgo")
 ax.invert_yaxis()
 
@@ -115,11 +124,13 @@ df_show["nota_promedio"] = df_show["nota_promedio"].round(1)
 st.dataframe(
     df_show[
         ["id_estudiante", "nombre_estudiante",
-         "nota_promedio", "asistencia", "F", "Rd"]
+         "nota_promedio", "asistencia", "F", "Rd", "CS"]
     ].style.format({
-        "asistencia": "{:.1%}",
+        "nota_promedio": "{:.1f}",
+        "asistencia": "{:.2f}%",
         "F": "{:.2f}",
-        "Rd": "{:.1%}"
+        "Rd": "{:.1%}",
+        "CS": "{:.2f}"
     }),
     use_container_width=True
 )
@@ -144,7 +155,7 @@ row = df_riesgo[df_riesgo["nombre_estudiante"] == sel].iloc[0]
 st.info(
     f"**Rd:** {row['Rd']:.1%} | "
     f"**Nota:** {row['nota_promedio']:.1f} | "
-    f"**Asistencia:** {row['asistencia']:.1%} | "
+    f"**Asistencia:** {row['asistencia']:.2f}% | "
     f"**Ambiente (F):** {row['F']:.2f}"
 )
 
