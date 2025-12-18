@@ -1,0 +1,9 @@
+﻿id_formulario,id_estudiante,nombre_estudiante,edad,genero,grado_secundaria,estado_academico,vive_con_padres,nivel_educativo_padres,recursos_educativos,seguridad_barrio,ausencia_violencia,estado_salud,acceso_servicios_salud,horas_estudio,asistencia_escolar,apoyo_familiar,ausencia_bullying,motivacion_estudio,servicios_basicos_casa,entorno_saludable
+1,1,Ana Pérez,16,F,5,1.0,1.0,1.0,0.65,0.75,1.0,0.5,0.0,1.0,0.5,0.5,1.0,1.0,0.6,0.5
+2,2,Carlos Gómez,17,M,4,1.0,1.0,0.25,0.71,1.0,0.0,0.5,1.0,0.6,1.0,1.0,0.0,0.0,1.0,0.5
+3,3,María López,16,F,4,1.0,0.0,0.5,0.54,0.75,0.3,0.5,1.0,1.0,0.75,0.5,1.0,1.0,1.0,0.5
+4,4,Luis Ramírez,15,M,2,1.0,0.5,0.5,0.89,1.0,0.7,1.0,1.0,0.4,0.25,0.0,0.0,0.75,0.6,1.0
+5,5,Sofía Castro,16,F,4,1.0,0.5,1.0,0.86,0.75,0.3,0.75,0.0,0.2,0.25,0.25,1.0,0.75,1.0,0.0
+6,6,Pedro Mendoza,16,M,5,1.0,0.0,0.25,0.52,0.75,0.7,0.75,0.5,0.4,0.5,1.0,1.0,0.75,1.0,1.0
+7,7,Valentina Rojas,17,F,3,1.0,0.5,0.75,0.45,0.5,0.7,1.0,1.0,0.8,0.75,0.5,0.0,0.0,0.6,0.0
+8,8,Andrés Silva,16,M,5,1.0,0.0,0.25,0.99,0.75,1.0,0.5,0.0,0.4,1.0,0.5,1.0,0.25,0.6,0.0
