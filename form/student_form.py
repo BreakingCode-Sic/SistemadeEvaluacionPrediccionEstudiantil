@@ -386,11 +386,21 @@ with st.form("student_form"):
     st.subheader("Uso de dispositivos electrónicos para estudio")
     col_disp1, col_disp2 = st.columns(2)
     with col_disp1:
-        disp_computadora = st.checkbox("💻 Computadora/Laptop")
-        disp_tablet = st.checkbox("📱 Tablet")
+        disp_computadora = st.checkbox("💻 Computadora/Laptop", key="disp_computadora")
+        disp_tablet = st.checkbox("📱 Tablet", key="disp_tablet")
     with col_disp2:
-        disp_celular = st.checkbox("📲 Celular")
-        disp_ninguno = st.checkbox("❌ Ningún dispositivo")
+        disp_celular = st.checkbox("📲 Celular", key="disp_celular")
+        disp_ninguno = st.checkbox("❌ Ningún dispositivo", key="disp_ninguno")
+
+    # Validación: "Ningún dispositivo" no puede combinarse con otros dispositivos
+    if st.session_state.get("disp_ninguno") and (
+        st.session_state.get("disp_computadora")
+        or st.session_state.get("disp_tablet")
+        or st.session_state.get("disp_celular")
+    ):
+        st.warning("La opción 'Ningún dispositivo' no puede seleccionarse junto con otros dispositivos. Se desmarcará 'Ningún dispositivo'.")
+        st.session_state["disp_ninguno"] = False
+        disp_ninguno = False
     
     # Calcular puntaje de dispositivos electrónicos
     dispositivos_pesos = {
