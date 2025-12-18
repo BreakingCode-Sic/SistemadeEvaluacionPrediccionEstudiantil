@@ -937,19 +937,30 @@ st.sidebar.info(
 
 st.sidebar.title("📊 Estadísticas")
 if os.path.exists("evaluaciones_estudiantes.csv"):
-    df = pd.read_csv("evaluaciones_estudiantes.csv")
+    try:
+        df = pd.read_csv("evaluaciones_estudiantes.csv")
+    except pd.errors.EmptyDataError:
+        df = pd.DataFrame()
+
     st.sidebar.metric("Total de Evaluaciones", len(df))
-    
-    if len(df) > 0:
-        st.sidebar.markdown("---")
-        st.sidebar.subheader("📈 Resumen Rápido")
-        avg_seguridad = df["Seguridad_Barrio"].mean()
-        avg_motivacion = df["Motivacion_Estudio"].mean()
-        avg_apoyo = df["Apoyo_Familiar"].mean()
-        
-        st.sidebar.metric("Seguridad Promedio", f"{avg_seguridad:.1f}/5")
-        st.sidebar.metric("Motivación Promedio", f"{avg_motivacion:.1f}/5")
-        st.sidebar.metric("Apoyo Familiar Promedio", f"{avg_apoyo:.1f}/5")
+
+    if not df.empty:
+        required_columns = {"Seguridad_Barrio", "Motivacion_Estudio", "Apoyo_Familiar"}
+        if required_columns.issubset(df.columns):
+            st.sidebar.markdown("---")
+            st.sidebar.subheader("📈 Resumen Rápido")
+            avg_seguridad = df["Seguridad_Barrio"].mean()
+            avg_motivacion = df["Motivacion_Estudio"].mean()
+            avg_apoyo = df["Apoyo_Familiar"].mean()
+
+            st.sidebar.metric("Seguridad Promedio", f"{avg_seguridad:.1f}/5")
+            st.sidebar.metric("Motivación Promedio", f"{avg_motivacion:.1f}/5")
+            st.sidebar.metric("Apoyo Familiar Promedio", f"{avg_apoyo:.1f}/5")
+        else:
+            st.sidebar.warning(
+                "No se pueden calcular estadísticas porque faltan columnas requeridas "
+                "en el archivo de evaluaciones."
+            )
 else:
     st.sidebar.metric("Total de Evaluaciones", 0)
 
