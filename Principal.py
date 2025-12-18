@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
-import seaborn as sns
+import seaborn as sns 
 
 # configuracion streamlit
 st.set_page_config(page_title="Dashboard Academico", layout="wide")
@@ -22,6 +22,7 @@ def cargar_datos():
     stats = rend.groupby("id_estudiante").agg(
         nota_promedio=("nota", "mean"),
         asistencia=("asistencia", "mean")
+        
     ).reset_index()
 
     # cantidad de observaciones
@@ -31,7 +32,8 @@ def cargar_datos():
     df = est.merge(stats, on="id_estudiante", how="left")\
             .merge(obs_count, on="id_estudiante", how="left")
     df["n_observaciones"] = df["n_observaciones"].fillna(0)
-
+    df["asistencia"]= df['asistencia']/100 # dividimos esta columnas para poder aplicarles el formato de porcentaje
+    df["Periodos"] = np.tile(["P1", "P2", "P3", "P4"], len(df) // 4 + 1)[:len(df)]
     return df
 
 df = cargar_datos()
@@ -40,40 +42,42 @@ df = cargar_datos()
 st.title("📊 Dashboard Academico")
 
 col1, col2, col3, col4 = st.columns(4)
-col1.metric("📚 Total estudiantes", len(df))
-col2.metric("📈 Promedio general", f"{df['nota_promedio'].mean():.1f}")
-col3.metric("✅ Asistencia media", f"{df['asistencia'].mean():.1%}")
-col4.metric("📝 Observaciones totales", df["n_observaciones"].sum())
+col1.metric("📚 Total Estudiantes", len(df))
+col2.metric("📈 Promedio General", f"{df['nota_promedio'].mean():.1f}")
+col3.metric("✅ Asistencia Porcentual (%)", f"{(df['asistencia'].mean()):.1%}")
+col4.metric("📝 Observaciones Totales", df["n_observaciones"].sum())
 
 # graficos generalizados de estudiantes
 col1, col2 = st.columns(2)
 
 with col1:
+   
+    plt.style.use("ggplot") # le agregamos un estilo a los graficos
     st.subheader("📊 Distribucion de notas")
-    fig, ax = plt.subplots(figsize=(4, 3))
-    ax.hist(df["nota_promedio"], bins=15, color="skyblue", edgecolor="black")
+    fig, ax = plt.subplots(figsize=(4, 4))
+    sns.barplot(data=df, y= "nota_promedio", x= "Periodos", color= "skyblue", alpha= 0.9, ax= ax, errorbar= None)
     ax.set_xlabel("Nota promedio")
     ax.set_ylabel("Estudiantes")
     st.pyplot(fig)
 
 with col2:
     st.subheader("📈 Asistencia vs Nota")
-    fig, ax = plt.subplots(figsize=(4, 3))
-    ax.scatter(df["asistencia"], df["nota_promedio"], alpha=0.6, color="teal")
+    fig, ax = plt.subplots(figsize=(4, 4))
+    sns.scatterplot(x= 'asistencia', y= 'nota_promedio', hue= "genero", color= ['teal', 'blue'], ax= ax, data= df)
     ax.set_xlabel("Asistencia (%)")
     ax.set_ylabel("Nota promedio")
     st.pyplot(fig)
 
 # tabla resumen
-st.subheader("📋 Resumen por estudiante")
+st.subheader("📋 Resumen Por Estudiante")
 st.dataframe(df[["id_estudiante", "nombre_estudiante", "nota_promedio", "asistencia", "n_observaciones"]]
-             .style.format({"nota_promedio": "{:.1f}", "asistencia": "{:.1%}"}))
+             .style.format({"nota_promedio": "{:.1f}", "asistencia": "{:.0%}"})) # le elimine el signo de % que provocaba el cambio
 
 # selector individual
-st.subheader("🔍 Detalle individual")
-sel = st.selectbox("Seleccione estudiante", sorted(df["nombre_estudiante"].dropna().astype(str).unique()))
+st.subheader("🔍 Detalle Individual")
+sel = st.selectbox("Seleccione Estudiante", sorted(df["nombre_estudiante"].dropna().astype(str).unique()))
 row = df[df["nombre_estudiante"] == sel].iloc[0]
-st.write(f"**Nota:** {row['nota_promedio']:.1f} | **Asistencia:** {row['asistencia']:.1%} | **Observaciones:** {int(row['n_observaciones'])}")
+st.write(f"**Nota:** {row['nota_promedio']:.1f} | **Asistencia:** {(row['asistencia']):.1%} | **Observaciones:** {int(row['n_observaciones'])}")
 
 st.markdown("---")
 st.caption("📊 Dashboard Academico | Dataset 2025")

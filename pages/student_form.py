@@ -14,7 +14,6 @@ st.set_page_config(
 st.markdown("""
 <style>
     .stForm {
-        background-color: #f8f9fa;
         padding: 20px;
         border-radius: 10px;
     }

@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+import seaborn as sns
 
 # configuracion streamlit
 st.set_page_config(page_title="Gestion de Estudiantes", page_icon="👥", layout="wide")
@@ -18,7 +19,7 @@ def load_datasets():
     # merge
     df = rend.merge(asig, left_on="asignatura", right_on="nombre_asignatura", how="left")
     df = df.merge(est, on="id_estudiante", how="left")
-
+    df= df.dropna()
     # nota final
     periodos = ["P1", "P2", "P3", "P4"]
     df["nota"] = df["CF"].copy()
@@ -97,8 +98,8 @@ def plot_student_dashboard(df, student_id, obs):
     data = df[df["nombre_estudiante"] == name]
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("📊 Promedio", f"{data['nota'].mean():.2f}")
-    c2.metric("🏆 Mejor nota", f"{data['nota'].max():.2f}")
-    c3.metric("📉 Peor nota", f"{data['nota'].min():.2f}")
+    c2.metric("🏆 Mejor Nota", f"{data['nota'].max():.2f}")
+    c3.metric("📉 Peor Nota", f"{data['nota'].min():.2f}")
     c4.metric("📚 Asignaturas", data["asignatura"].nunique())
 
     # observaciones
@@ -115,7 +116,7 @@ def plot_student_dashboard(df, student_id, obs):
 # sidebar para submodulos de estudiantes
 df, obs = load_datasets()
 
-option = st.sidebar.radio("📚 Listar:", ["📋 Ver todos", "📖 Por asignatura", "📊 Estadisticas", "📈 Graficos"])
+option = st.sidebar.radio("📚 Listar:", ["📋 Ver todos", "📖 Por asignatura", "📊 Estadisticas"])
 
 if option == "📋 Ver todos":
     st.header("📋 Lista de estudiantes")
@@ -130,7 +131,7 @@ elif option == "📖 Por asignatura":
     st.metric(f"📊 Promedio en {subject}", f"{average_by_subject(df, subject):.2f}")
 
 elif option == "📊 Estadisticas":
-    st.header("📊 Estadisticas generales")
+    st.header("📊 Estadisticas Generales")
     stats = get_database_stats(df)
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("📚 Total estudiantes", stats["total_students"])
@@ -138,12 +139,17 @@ elif option == "📊 Estadisticas":
     c3.metric("🏆 Nota max", f"{stats['highest_score']:.2f}")
     c4.metric("📉 Nota min", f"{stats['lowest_score']:.2f}")
     st.subheader("📊 Distribucion de notas")
+    
+    sns.set_theme(
+    style="whitegrid",
+    context="talk",
+    palette="Set2"
+)
     fig, ax = plt.subplots(figsize=(6, 3))
     df["nota"].plot(kind="hist", bins=15, ax=ax, color="steelblue", alpha=.7)
     st.pyplot(fig)
-
-elif option == "📈 Graficos":
-    st.header("📈 Graficos individuales")
+    
+    st.header("📈 Graficos Individuales")
     names = sorted(df["nombre_estudiante"].dropna().astype(str).unique())
     name = st.selectbox("Estudiante", names)
     sid = df[df["nombre_estudiante"] == name]["id_estudiante"].iloc[0]
