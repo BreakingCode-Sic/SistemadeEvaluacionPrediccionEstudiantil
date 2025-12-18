@@ -61,14 +61,16 @@ with st.form("student_form"):
     st.header("2. 👨‍👩‍👧‍👦 Contexto Familiar")
     
     st.subheader("¿Vives con tus padres?")
-    col_fam1, col_fam2 = st.columns(2)
-    with col_fam1:
-        vive_padre = st.checkbox("Padre")
-        vive_madre = st.checkbox("Madre")
-        vive_ambos = st.checkbox("Ambos padres")
-    with col_fam2:
-        vive_ninguno = st.checkbox("Ninguno")
-        vive_otro = st.checkbox("Otro familiar/tutor")
+    tipo_convivencia = st.radio(
+        "Selecciona con quién vives principalmente",
+        ["Padre", "Madre", "Ambos padres", "Ninguno", "Otro familiar/tutor"],
+        index=2
+    )
+    vive_padre = tipo_convivencia == "Padre"
+    vive_madre = tipo_convivencia == "Madre"
+    vive_ambos = tipo_convivencia == "Ambos padres"
+    vive_ninguno = tipo_convivencia == "Ninguno"
+    vive_otro = tipo_convivencia == "Otro familiar/tutor"
     
     # Calcular puntaje de estructura familiar
     familia_pesos = {
