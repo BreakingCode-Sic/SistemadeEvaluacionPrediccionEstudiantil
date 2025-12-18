@@ -152,12 +152,12 @@ with st.form("student_form"):
     st.subheader("¿Tienes acceso a recursos educativos en casa?")
     col_rec1, col_rec2 = st.columns(2)
     with col_rec1:
-        rec_libros = st.checkbox("📚 Libros")
-        rec_computadora = st.checkbox("💻 Computadora")
-        rec_internet = st.checkbox("🌐 Internet")
+        rec_libros = st.checkbox("Libros 📚", help="Acceso a libros de texto, referencias o lectura")
+        rec_computadora = st.checkbox("Computadora 💻", help="Computadora de escritorio o laptop para estudiar")
+        rec_internet = st.checkbox("Internet 🌐", help="Conexión a internet en casa")
     with col_rec2:
-        rec_tutorias = st.checkbox("👨‍🏫 Tutorías")
-        rec_otros = st.checkbox("📦 Otros recursos")
+        rec_tutorias = st.checkbox("Tutorías 👨‍🏫", help="Acceso a clases particulares o tutorías")
+        rec_otros = st.checkbox("Otros recursos 📦", help="Otros materiales educativos")
     
     # Calcular puntaje de recursos educativos
     recursos_pesos = {
@@ -199,11 +199,11 @@ with st.form("student_form"):
     st.caption("Selecciona todos los que apliquen")
     col_vio1, col_vio2 = st.columns(2)
     with col_vio1:
-        vio_robos = st.checkbox("🚨 Robos")
-        vio_peleas = st.checkbox("👊 Peleas")
+        vio_robos = st.checkbox("Robos 🚨", help="Incidentes de robo o asalto en la zona")
+        vio_peleas = st.checkbox("Peleas 👊", help="Peleas callejeras o confrontaciones")
     with col_vio2:
-        vio_drogas = st.checkbox("💊 Drogas")
-        vio_acoso = st.checkbox("😰 Acoso")
+        vio_drogas = st.checkbox("Drogas 💊", help="Presencia de actividades relacionadas con drogas")
+        vio_acoso = st.checkbox("Acoso 😰", help="Acoso o intimidación en la zona")
     
     # Calcular puntaje de violencia con pesos
     violencia_pesos = {
@@ -238,10 +238,10 @@ with st.form("student_form"):
     st.subheader("¿Tienes acceso a espacios seguros para estudiar fuera de casa?")
     col_esp1, col_esp2 = st.columns(2)
     with col_esp1:
-        esp_biblioteca = st.checkbox("📖 Biblioteca")
-        esp_centro = st.checkbox("🏛️ Centro comunitario")
+        esp_biblioteca = st.checkbox("Biblioteca 📖", help="Biblioteca pública o escolar")
+        esp_centro = st.checkbox("Centro comunitario 🏛️", help="Centro comunitario o cultural")
     with col_esp2:
-        esp_otro = st.checkbox("🏫 Otro espacio seguro")
+        esp_otro = st.checkbox("Otro espacio seguro 🏫", help="Cualquier otro lugar seguro para estudiar")
     
     # Calcular puntaje de espacios seguros
     espacios_pesos = {
@@ -273,11 +273,11 @@ with st.form("student_form"):
     st.subheader("Acceso a servicios de salud")
     col_sal1, col_sal2 = st.columns(2)
     with col_sal1:
-        sal_hospital = st.checkbox("🏥 Hospital", key="sal_hospital")
-        sal_clinica = st.checkbox("🩺 Clínica", key="sal_clinica")
+        sal_hospital = st.checkbox("Hospital 🏥", key="sal_hospital", help="Acceso a hospital público o privado")
+        sal_clinica = st.checkbox("Clínica 🩺", key="sal_clinica", help="Acceso a clínica médica")
     with col_sal2:
-        sal_seguro = st.checkbox("📋 Seguro médico", key="sal_seguro")
-        sal_ninguno = st.checkbox("❌ Ningún acceso", key="sal_ninguno")
+        sal_seguro = st.checkbox("Seguro médico 📋", key="sal_seguro", help="Cobertura de seguro de salud")
+        sal_ninguno = st.checkbox("Ningún acceso ❌", key="sal_ninguno", help="Sin acceso a servicios de salud")
 
     # Asegurar que "Ningún acceso" sea excluyente con las demás opciones
     if st.session_state.get("sal_ninguno"):
@@ -317,11 +317,11 @@ with st.form("student_form"):
     st.subheader("¿Alguna condición especial que afecte tu estudio?")
     col_cond1, col_cond2 = st.columns(2)
     with col_cond1:
-        cond_visual = st.checkbox("👁️ Visual")
-        cond_auditiva = st.checkbox("👂 Auditiva")
+        cond_visual = st.checkbox("Visual 👁️", help="Problemas de visión o ceguera")
+        cond_auditiva = st.checkbox("Auditiva 👂", help="Problemas de audición o sordera")
     with col_cond2:
-        cond_emocional = st.checkbox("💭 Emocional")
-        cond_otra = st.checkbox("🔷 Otra condición")
+        cond_emocional = st.checkbox("Emocional 💭", help="Condiciones emocionales o de salud mental")
+        cond_otra = st.checkbox("Otra condición 🔷", help="Cualquier otra condición que afecte el estudio")
     
     # Calcular puntaje de condiciones especiales (mayor score = más condiciones)
     condiciones_pesos = {
@@ -355,12 +355,12 @@ with st.form("student_form"):
     st.subheader("Participación en actividades extracurriculares")
     col_act1, col_act2 = st.columns(2)
     with col_act1:
-        act_deportes = st.checkbox("⚽ Deportes", key="act_deportes")
-        act_arte = st.checkbox("🎨 Arte", key="act_arte")
-        act_ciencia = st.checkbox("🔬 Ciencia", key="act_ciencia")
+        act_deportes = st.checkbox("Deportes ⚽", key="act_deportes", help="Participación en deportes o actividades físicas")
+        act_arte = st.checkbox("Arte 🎨", key="act_arte", help="Actividades artísticas como música, pintura, teatro")
+        act_ciencia = st.checkbox("Ciencia 🔬", key="act_ciencia", help="Clubes de ciencia, robótica, investigación")
     with col_act2:
-        act_voluntariado = st.checkbox("🤝 Voluntariado", key="act_voluntariado")
-        act_otro = st.checkbox("📌 Otra actividad", key="act_otro")
+        act_voluntariado = st.checkbox("Voluntariado 🤝", key="act_voluntariado", help="Trabajo voluntario o servicio comunitario")
+        act_otro = st.checkbox("Otra actividad 📌", key="act_otro", help="Otras actividades extracurriculares")
     
     # Calcular puntaje de actividades extracurriculares
     actividades_pesos = {
@@ -386,11 +386,11 @@ with st.form("student_form"):
     st.subheader("Uso de dispositivos electrónicos para estudio")
     col_disp1, col_disp2 = st.columns(2)
     with col_disp1:
-        disp_computadora = st.checkbox("💻 Computadora/Laptop")
-        disp_tablet = st.checkbox("📱 Tablet")
+        disp_computadora = st.checkbox("Computadora/Laptop 💻", help="Computadora de escritorio o portátil")
+        disp_tablet = st.checkbox("Tablet 📱", help="Tableta electrónica")
     with col_disp2:
-        disp_celular = st.checkbox("📲 Celular")
-        disp_ninguno = st.checkbox("❌ Ningún dispositivo")
+        disp_celular = st.checkbox("Celular 📲", help="Teléfono móvil o smartphone")
+        disp_ninguno = st.checkbox("Ningún dispositivo ❌", help="Sin acceso a dispositivos electrónicos")
     
     # Calcular puntaje de dispositivos electrónicos
     dispositivos_pesos = {
@@ -445,12 +445,12 @@ with st.form("student_form"):
     st.subheader("Estado de ánimo general")
     col_ani1, col_ani2 = st.columns(2)
     with col_ani1:
-        ani_alegre = st.checkbox("😊 Alegre")
-        ani_neutral = st.checkbox("😐 Neutral")
-        ani_triste = st.checkbox("😢 Triste")
+        ani_alegre = st.checkbox("Alegre 😊", help="Me siento feliz y optimista")
+        ani_neutral = st.checkbox("Neutral 😐", help="No me siento ni bien ni mal")
+        ani_triste = st.checkbox("Triste 😢", help="Me siento triste o desanimado")
     with col_ani2:
-        ani_ansioso = st.checkbox("😰 Ansioso")
-        ani_otro = st.checkbox("🔷 Otro")
+        ani_ansioso = st.checkbox("Ansioso 😰", help="Me siento ansioso o preocupado")
+        ani_otro = st.checkbox("Otro 🔷", help="Otro estado de ánimo")
     
     # Calcular puntaje de estado de ánimo (mayor = mejor)
     animo_pesos = {
@@ -488,14 +488,14 @@ with st.form("student_form"):
     st.subheader("¿Cuáles son tus materias favoritas?")
     col_mat1, col_mat2, col_mat3 = st.columns(3)
     with col_mat1:
-        mat_matematicas = st.checkbox("🔢 Matemáticas", key="mat_matematicas")
-        mat_ciencias = st.checkbox("🔬 Ciencias", key="mat_ciencias")
+        mat_matematicas = st.checkbox("Matemáticas 🔢", key="mat_matematicas", help="Álgebra, geometría, cálculo")
+        mat_ciencias = st.checkbox("Ciencias 🔬", key="mat_ciencias", help="Física, química, biología")
     with col_mat2:
-        mat_historia = st.checkbox("📜 Historia", key="mat_historia")
-        mat_idiomas = st.checkbox("🌍 Idiomas", key="mat_idiomas")
+        mat_historia = st.checkbox("Historia 📜", key="mat_historia", help="Historia y ciencias sociales")
+        mat_idiomas = st.checkbox("Idiomas 🌍", key="mat_idiomas", help="Español, inglés, otros idiomas")
     with col_mat3:
-        mat_arte = st.checkbox("🎨 Arte", key="mat_arte")
-        mat_deportes = st.checkbox("⚽ Deportes/Educación Física", key="mat_deportes")
+        mat_arte = st.checkbox("Arte 🎨", key="mat_arte", help="Arte, música, manualidades")
+        mat_deportes = st.checkbox("Deportes/Educación Física ⚽", key="mat_deportes", help="Actividades físicas y deportivas")
     
     # Calcular puntaje de materias favoritas
     materias_pesos = {
@@ -524,12 +524,12 @@ with st.form("student_form"):
     st.subheader("¿En qué áreas crees que destacas?")
     col_area1, col_area2 = st.columns(2)
     with col_area1:
-        area_logico = st.checkbox("🧮 Lógico-matemático", key="area_logico")
-        area_cientifico = st.checkbox("🔭 Científico", key="area_cientifico")
-        area_social = st.checkbox("🤝 Social", key="area_social")
+        area_logico = st.checkbox("Lógico-matemático 🧮", key="area_logico", help="Razonamiento lógico y matemático")
+        area_cientifico = st.checkbox("Científico 🔭", key="area_cientifico", help="Ciencias e investigación")
+        area_social = st.checkbox("Social 🤝", key="area_social", help="Habilidades sociales y comunicación")
     with col_area2:
-        area_artistico = st.checkbox("🎭 Artístico", key="area_artistico")
-        area_deportivo = st.checkbox("🏃 Deportivo", key="area_deportivo")
+        area_artistico = st.checkbox("Artístico 🎭", key="area_artistico", help="Creatividad y expresión artística")
+        area_deportivo = st.checkbox("Deportivo 🏃", key="area_deportivo", help="Actividades físicas y deportivas")
     
     # Calcular puntaje de áreas de destaque
     areas_pesos = {
@@ -553,13 +553,13 @@ with st.form("student_form"):
     areas_normalizado = areas_score / sum(areas_pesos.values())
     
     st.subheader("¿Qué metas académicas tienes a corto plazo?")
-    meta_corto_aprobar = st.checkbox("✅ Aprobar todas las materias con buenas calificaciones", key="meta_corto_aprobar")
-    meta_corto_mejorar = st.checkbox("📈 Mejorar en áreas donde tengo dificultades", key="meta_corto_mejorar")
-    meta_corto_participar = st.checkbox("🎯 Participar en proyectos o actividades extracurriculares", key="meta_corto_participar")
-    meta_corto_habilidades = st.checkbox("💡 Desarrollar habilidades específicas (programación, matemáticas, escritura, ciencia)", key="meta_corto_habilidades")
-    meta_corto_reconocimiento = st.checkbox("🏆 Obtener reconocimiento académico (certificados, concursos)", key="meta_corto_reconocimiento")
-    meta_corto_habitos = st.checkbox("📚 Mejorar hábitos de estudio y organización", key="meta_corto_habitos")
-    meta_corto_relaciones = st.checkbox("🤝 Fortalecer relaciones con profesores y compañeros para aprender mejor", key="meta_corto_relaciones")
+    meta_corto_aprobar = st.checkbox("Aprobar todas las materias con buenas calificaciones ✅", key="meta_corto_aprobar", help="Lograr buenas calificaciones en todas las materias")
+    meta_corto_mejorar = st.checkbox("Mejorar en áreas donde tengo dificultades 📈", key="meta_corto_mejorar", help="Superar dificultades en materias específicas")
+    meta_corto_participar = st.checkbox("Participar en proyectos o actividades extracurriculares 🎯", key="meta_corto_participar", help="Involucrarse en actividades fuera del currículo")
+    meta_corto_habilidades = st.checkbox("Desarrollar habilidades específicas (programación, matemáticas, escritura, ciencia) 💡", key="meta_corto_habilidades", help="Fortalecer habilidades en áreas específicas")
+    meta_corto_reconocimiento = st.checkbox("Obtener reconocimiento académico (certificados, concursos) 🏆", key="meta_corto_reconocimiento", help="Participar y destacar en concursos o certificaciones")
+    meta_corto_habitos = st.checkbox("Mejorar hábitos de estudio y organización 📚", key="meta_corto_habitos", help="Desarrollar mejores técnicas de estudio")
+    meta_corto_relaciones = st.checkbox("Fortalecer relaciones con profesores y compañeros para aprender mejor 🤝", key="meta_corto_relaciones", help="Mejorar la comunicación con profesores y compañeros")
     
     # Calcular puntaje de metas a corto plazo
     metas_corto_pesos = {
@@ -589,13 +589,13 @@ with st.form("student_form"):
     metas_corto_normalizado = metas_corto_score / sum(metas_corto_pesos.values())
     
     st.subheader("¿Qué metas tienes a largo plazo?")
-    meta_largo_universidad = st.checkbox("🎓 Ingresar a la universidad o continuar estudios superiores", key="meta_largo_universidad")
-    meta_largo_carrera = st.checkbox("💼 Elegir una carrera profesional específica", key="meta_largo_carrera")
-    meta_largo_becas = st.checkbox("🏅 Obtener becas o reconocimientos académicos", key="meta_largo_becas")
-    meta_largo_competencias = st.checkbox("🛠️ Desarrollar competencias profesionales (habilidades técnicas, idiomas, liderazgo)", key="meta_largo_competencias")
-    meta_largo_investigacion = st.checkbox("🔬 Contribuir a proyectos de investigación o innovación", key="meta_largo_investigacion")
-    meta_largo_impacto = st.checkbox("🌍 Tener un impacto positivo en la comunidad o entorno", key="meta_largo_impacto")
-    meta_largo_red = st.checkbox("🌐 Desarrollar una red de contactos profesional y académica", key="meta_largo_red")
+    meta_largo_universidad = st.checkbox("Ingresar a la universidad o continuar estudios superiores 🎓", key="meta_largo_universidad", help="Continuar con educación superior")
+    meta_largo_carrera = st.checkbox("Elegir una carrera profesional específica 💼", key="meta_largo_carrera", help="Definir una profesión o especialización")
+    meta_largo_becas = st.checkbox("Obtener becas o reconocimientos académicos 🏅", key="meta_largo_becas", help="Conseguir becas de estudio o premios académicos")
+    meta_largo_competencias = st.checkbox("Desarrollar competencias profesionales (habilidades técnicas, idiomas, liderazgo) 🛠️", key="meta_largo_competencias", help="Adquirir habilidades profesionales complementarias")
+    meta_largo_investigacion = st.checkbox("Contribuir a proyectos de investigación o innovación 🔬", key="meta_largo_investigacion", help="Participar en investigación científica o proyectos innovadores")
+    meta_largo_impacto = st.checkbox("Tener un impacto positivo en la comunidad o entorno 🌍", key="meta_largo_impacto", help="Contribuir al desarrollo social o comunitario")
+    meta_largo_red = st.checkbox("Desarrollar una red de contactos profesional y académica 🌐", key="meta_largo_red", help="Crear conexiones profesionales y académicas")
     
     # Calcular puntaje de metas a largo plazo
     metas_largo_pesos = {
@@ -657,12 +657,12 @@ with st.form("student_form"):
     st.caption("Esta sección se refiere a servicios básicos del hogar (independientes de los recursos de estudio preguntados anteriormente).")
     col_serv1, col_serv2 = st.columns(2)
     with col_serv1:
-        serv_agua = st.checkbox("💧 Agua potable")
-        serv_luz = st.checkbox("💡 Electricidad")
-        serv_internet = st.checkbox("📶 Servicio básico de internet en el hogar (uso general)")
+        serv_agua = st.checkbox("Agua potable 💧", help="Acceso a agua potable en el hogar")
+        serv_luz = st.checkbox("Electricidad 💡", help="Servicio de electricidad en el hogar")
+        serv_internet = st.checkbox("Servicio básico de internet en el hogar (uso general) 📶", help="Internet para uso general del hogar")
     with col_serv2:
-        serv_saneamiento = st.checkbox("🚽 Saneamiento")
-        serv_ninguno = st.checkbox("❌ Ninguno de los anteriores")
+        serv_saneamiento = st.checkbox("Saneamiento 🚽", help="Servicio de saneamiento o drenaje")
+        serv_ninguno = st.checkbox("Ninguno de los anteriores ❌", help="Sin acceso a servicios básicos")
     
     # Calcular puntaje de servicios básicos
     servicios_pesos = {
@@ -694,12 +694,12 @@ with st.form("student_form"):
     st.subheader("Acceso a actividades culturales o recreativas")
     col_cult1, col_cult2 = st.columns(2)
     with col_cult1:
-        cult_biblioteca = st.checkbox("📚 Biblioteca pública", key="cult_biblioteca")
-        cult_museo = st.checkbox("🏛️ Museo", key="cult_museo")
-        cult_cine = st.checkbox("🎬 Cine", key="cult_cine")
+        cult_biblioteca = st.checkbox("Biblioteca pública 📚", key="cult_biblioteca", help="Acceso a bibliotecas públicas")
+        cult_museo = st.checkbox("Museo 🏛️", key="cult_museo", help="Acceso a museos o galerías")
+        cult_cine = st.checkbox("Cine 🎬", key="cult_cine", help="Acceso a salas de cine")
     with col_cult2:
-        cult_parques = st.checkbox("🌳 Parques", key="cult_parques")
-        cult_otro = st.checkbox("🎭 Otro espacio cultural", key="cult_otro")
+        cult_parques = st.checkbox("Parques 🌳", key="cult_parques", help="Acceso a parques o espacios verdes")
+        cult_otro = st.checkbox("Otro espacio cultural 🎭", key="cult_otro", help="Otros espacios culturales o recreativos")
     
     # Calcular puntaje de actividades culturales
     cultura_pesos = {
