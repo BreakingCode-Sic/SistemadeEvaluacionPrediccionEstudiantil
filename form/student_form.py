@@ -1,3 +1,49 @@
+"""
+Student Contextual Evaluation Form
+
+This module provides an interactive web form for collecting comprehensive contextual data
+about students, which is essential for the student evaluation and prediction system.
+
+Purpose:
+    Collects multi-dimensional student data including:
+    - Personal and demographic information
+    - Family context (structure, education, employment, resources)
+    - Safety and environment factors
+    - Health and well-being indicators
+    - Behavioral patterns and study habits
+    - Emotional and social context
+    - Academic perceptions and goals
+    - Extended contextual data (transportation, basic services, cultural access)
+
+Integration with the System:
+    This form serves as a data collection frontend for the broader Sistema de Evaluación
+    y Predicción Estudiantil (Student Evaluation and Prediction System). The collected
+    data is stored in 'evaluaciones_estudiantes.csv' and can be combined with:
+    - Academic performance data (grades, attendance)
+    - Teacher observations
+    - ML models for dropout risk prediction (core/models_riesgo.py)
+    - Academic area recommendation models (core/models_area.py)
+
+Data Usage:
+    The collected data is used to:
+    1. Identify risk factors for academic dropout
+    2. Provide personalized academic and professional recommendations
+    3. Generate comprehensive student profiles for intervention planning
+    4. Train and improve ML prediction models with contextual features
+    5. Analyze correlations between environmental/social factors and academic outcomes
+
+Data Storage:
+    All responses are saved to 'evaluaciones_estudiantes.csv' with:
+    - Timestamp for tracking
+    - Raw boolean/numeric values for each indicator
+    - Normalized scores (0-1 scale) for weighted factor groups
+    - Full confidentiality and academic-purpose authorization
+
+Technical Implementation:
+    Built with Streamlit for web interface, uses weighted scoring system for
+    multi-factor indicators, implements form validation and data normalization.
+"""
+
 import streamlit as st
 import pandas as pd
 from datetime import datetime
