@@ -273,28 +273,11 @@ with st.form("student_form"):
     st.subheader("Acceso a servicios de salud")
     col_sal1, col_sal2 = st.columns(2)
     with col_sal1:
-        sal_hospital = st.checkbox("🏥 Hospital", key="sal_hospital")
-        sal_clinica = st.checkbox("🩺 Clínica", key="sal_clinica")
+        sal_hospital = st.checkbox("🏥 Hospital")
+        sal_clinica = st.checkbox("🩺 Clínica")
     with col_sal2:
-        sal_seguro = st.checkbox("📋 Seguro médico", key="sal_seguro")
-        sal_ninguno = st.checkbox("❌ Ningún acceso", key="sal_ninguno")
-
-    # Asegurar que "Ningún acceso" sea excluyente con las demás opciones
-    if st.session_state.get("sal_ninguno"):
-        st.session_state["sal_hospital"] = False
-        st.session_state["sal_clinica"] = False
-        st.session_state["sal_seguro"] = False
-    elif any(
-        st.session_state.get(k, False)
-        for k in ("sal_hospital", "sal_clinica", "sal_seguro")
-    ):
-        st.session_state["sal_ninguno"] = False
-
-    # Actualizar variables locales según el estado validado
-    sal_hospital = st.session_state.get("sal_hospital", False)
-    sal_clinica = st.session_state.get("sal_clinica", False)
-    sal_seguro = st.session_state.get("sal_seguro", False)
-    sal_ninguno = st.session_state.get("sal_ninguno", False)
+        sal_seguro = st.checkbox("📋 Seguro médico")
+        sal_ninguno = st.checkbox("❌ Ningún acceso")
     
     # Calcular puntaje de acceso a salud
     salud_acceso_pesos = {
@@ -386,21 +369,11 @@ with st.form("student_form"):
     st.subheader("Uso de dispositivos electrónicos para estudio")
     col_disp1, col_disp2 = st.columns(2)
     with col_disp1:
-        disp_computadora = st.checkbox("💻 Computadora/Laptop", key="disp_computadora")
-        disp_tablet = st.checkbox("📱 Tablet", key="disp_tablet")
+        disp_computadora = st.checkbox("💻 Computadora/Laptop")
+        disp_tablet = st.checkbox("📱 Tablet")
     with col_disp2:
-        disp_celular = st.checkbox("📲 Celular", key="disp_celular")
-        disp_ninguno = st.checkbox("❌ Ningún dispositivo", key="disp_ninguno")
-
-    # Validación: "Ningún dispositivo" no puede combinarse con otros dispositivos
-    if st.session_state.get("disp_ninguno") and (
-        st.session_state.get("disp_computadora")
-        or st.session_state.get("disp_tablet")
-        or st.session_state.get("disp_celular")
-    ):
-        st.warning("La opción 'Ningún dispositivo' no puede seleccionarse junto con otros dispositivos. Se desmarcará 'Ningún dispositivo'.")
-        st.session_state["disp_ninguno"] = False
-        disp_ninguno = False
+        disp_celular = st.checkbox("📲 Celular")
+        disp_ninguno = st.checkbox("❌ Ningún dispositivo")
     
     # Calcular puntaje de dispositivos electrónicos
     dispositivos_pesos = {
@@ -766,74 +739,74 @@ with st.form("student_form"):
                 "Codigo_Estudiante": codigo_estudiante,
                 "Grado": grado,
                 # Contexto familiar
-                "Vive_Padre": vive_padre,
-                "Vive_Madre": vive_madre,
-                "Vive_Ambos": vive_ambos,
-                "Vive_Ninguno": vive_ninguno,
-                "Vive_Otro": vive_otro,
+                "Vive_Padre": 1 if vive_padre else 0,
+                "Vive_Madre": 1 if vive_madre else 0,
+                "Vive_Ambos": 1 if vive_ambos else 0,
+                "Vive_Ninguno": 1 if vive_ninguno else 0,
+                "Vive_Otro": 1 if vive_otro else 0,
                 "Familia_Score": familia_score,
                 "Familia_Normalizado": familia_normalizado,
                 "Num_Hermanos": hermanos,
-                "Edu_Primaria": edu_primaria,
-                "Edu_Secundaria": edu_secundaria,
-                "Edu_Universitario": edu_universitario,
-                "Edu_Otro": edu_otro,
+                "Edu_Primaria": 1 if edu_primaria else 0,
+                "Edu_Secundaria": 1 if edu_secundaria else 0,
+                "Edu_Universitario": 1 if edu_universitario else 0,
+                "Edu_Otro": 1 if edu_otro else 0,
                 "Educacion_Score": educacion_score,
                 "Educacion_Normalizado": educacion_normalizado,
-                "Lab_Empleado": lab_empleado,
-                "Lab_Desempleado": lab_desempleado,
-                "Lab_Independiente": lab_independiente,
-                "Lab_Otro": lab_otro,
+                "Lab_Empleado": 1 if lab_empleado else 0,
+                "Lab_Desempleado": 1 if lab_desempleado else 0,
+                "Lab_Independiente": 1 if lab_independiente else 0,
+                "Lab_Otro": 1 if lab_otro else 0,
                 "Laboral_Score": laboral_score,
                 "Laboral_Normalizado": laboral_normalizado,
-                "Rec_Libros": rec_libros,
-                "Rec_Computadora": rec_computadora,
-                "Rec_Internet": rec_internet,
-                "Rec_Tutorias": rec_tutorias,
-                "Rec_Otros": rec_otros,
+                "Rec_Libros": 1 if rec_libros else 0,
+                "Rec_Computadora": 1 if rec_computadora else 0,
+                "Rec_Internet": 1 if rec_internet else 0,
+                "Rec_Tutorias": 1 if rec_tutorias else 0,
+                "Rec_Otros": 1 if rec_otros else 0,
                 "Recursos_Score": recursos_score,
                 "Recursos_Normalizado": recursos_normalizado,
                 # Seguridad y entorno
                 "Seguridad_Barrio": seguridad_barrio,
-                "Vio_Robos": vio_robos,
-                "Vio_Peleas": vio_peleas,
-                "Vio_Drogas": vio_drogas,
-                "Vio_Acoso": vio_acoso,
+                "Vio_Robos": 1 if vio_robos else 0,
+                "Vio_Peleas": 1 if vio_peleas else 0,
+                "Vio_Drogas": 1 if vio_drogas else 0,
+                "Vio_Acoso": 1 if vio_acoso else 0,
                 "Violencia_Score": violencia_score,
                 "Violencia_Normalizado": violencia_normalizado,
                 "Ruido_Estudio": ruido_estudio,
-                "Esp_Biblioteca": esp_biblioteca,
-                "Esp_Centro": esp_centro,
-                "Esp_Otro": esp_otro,
+                "Esp_Biblioteca": 1 if esp_biblioteca else 0,
+                "Esp_Centro": 1 if esp_centro else 0,
+                "Esp_Otro": 1 if esp_otro else 0,
                 "Espacios_Score": espacios_score,
                 "Espacios_Normalizado": espacios_normalizado,
                 # Salud y bienestar
                 "Salud_General": salud_general,
-                "Sal_Hospital": sal_hospital,
-                "Sal_Clinica": sal_clinica,
-                "Sal_Seguro": sal_seguro,
-                "Sal_Ninguno": sal_ninguno,
+                "Sal_Hospital": 1 if sal_hospital else 0,
+                "Sal_Clinica": 1 if sal_clinica else 0,
+                "Sal_Seguro": 1 if sal_seguro else 0,
+                "Sal_Ninguno": 1 if sal_ninguno else 0,
                 "Salud_Acceso_Score": salud_acceso_score,
                 "Salud_Acceso_Normalizado": salud_acceso_normalizado,
-                "Cond_Visual": cond_visual,
-                "Cond_Auditiva": cond_auditiva,
-                "Cond_Emocional": cond_emocional,
-                "Cond_Otra": cond_otra,
+                "Cond_Visual": 1 if cond_visual else 0,
+                "Cond_Auditiva": 1 if cond_auditiva else 0,
+                "Cond_Emocional": 1 if cond_emocional else 0,
+                "Cond_Otra": 1 if cond_otra else 0,
                 "Condiciones_Score": condiciones_score,
                 "Condiciones_Normalizado": condiciones_normalizado,
                 # Comportamiento y hábitos
                 "Horas_Estudio": horas_estudio,
-                "Act_Deportes": act_deportes,
-                "Act_Arte": act_arte,
-                "Act_Ciencia": act_ciencia,
-                "Act_Voluntariado": act_voluntariado,
-                "Act_Otro": act_otro,
+                "Act_Deportes": 1 if act_deportes else 0,
+                "Act_Arte": 1 if act_arte else 0,
+                "Act_Ciencia": 1 if act_ciencia else 0,
+                "Act_Voluntariado": 1 if act_voluntariado else 0,
+                "Act_Otro": 1 if act_otro else 0,
                 "Actividades_Score": actividades_score,
                 "Actividades_Normalizado": actividades_normalizado,
-                "Disp_Computadora": disp_computadora,
-                "Disp_Tablet": disp_tablet,
-                "Disp_Celular": disp_celular,
-                "Disp_Ninguno": disp_ninguno,
+                "Disp_Computadora": 1 if disp_computadora else 0,
+                "Disp_Tablet": 1 if disp_tablet else 0,
+                "Disp_Celular": 1 if disp_celular else 0,
+                "Disp_Ninguno": 1 if disp_ninguno else 0,
                 "Dispositivos_Score": dispositivos_score,
                 "Dispositivos_Normalizado": dispositivos_normalizado,
                 "Asistencia_Escuela": asistencia_escuela,
@@ -841,75 +814,77 @@ with st.form("student_form"):
                 "Apoyo_Familiar": apoyo_familiar,
                 "Integracion_Companeros": integracion_companeros,
                 "Bullying": bullying,
-                "Ani_Alegre": ani_alegre,
-                "Ani_Neutral": ani_neutral,
-                "Ani_Triste": ani_triste,
-                "Ani_Ansioso": ani_ansioso,
-                "Ani_Otro": ani_otro,
+                "Ani_Alegre": 1 if ani_alegre else 0,
+                "Ani_Neutral": 1 if ani_neutral else 0,
+                "Ani_Triste": 1 if ani_triste else 0,
+                "Ani_Ansioso": 1 if ani_ansioso else 0,
+                "Ani_Otro": 1 if ani_otro else 0,
                 "Animo_Score": animo_score,
                 "Animo_Normalizado": animo_normalizado,
                 "Motivacion_Estudio": motivacion_estudio,
                 # Percepción académica
-                "Mat_Matematicas": mat_matematicas,
-                "Mat_Ciencias": mat_ciencias,
-                "Mat_Historia": mat_historia,
-                "Mat_Idiomas": mat_idiomas,
-                "Mat_Arte": mat_arte,
-                "Mat_Deportes": mat_deportes,
+                "Mat_Matematicas": 1 if mat_matematicas else 0,
+                "Mat_Ciencias": 1 if mat_ciencias else 0,
+                "Mat_Historia": 1 if mat_historia else 0,
+                "Mat_Idiomas": 1 if mat_idiomas else 0,
+                "Mat_Arte": 1 if mat_arte else 0,
+                "Mat_Deportes": 1 if mat_deportes else 0,
                 "Materias_Score": materias_score,
                 "Materias_Normalizado": materias_normalizado,
-                "Area_Logico": area_logico,
-                "Area_Cientifico": area_cientifico,
-                "Area_Social": area_social,
-                "Area_Artistico": area_artistico,
-                "Area_Deportivo": area_deportivo,
+                "Area_Logico": 1 if area_logico else 0,
+                "Area_Cientifico": 1 if area_cientifico else 0,
+                "Area_Social": 1 if area_social else 0,
+                "Area_Artistico": 1 if area_artistico else 0,
+                "Area_Deportivo": 1 if area_deportivo else 0,
                 "Areas_Score": areas_score,
                 "Areas_Normalizado": areas_normalizado,
                 # Metas corto plazo
-                "Meta_Corto_Aprobar": meta_corto_aprobar,
-                "Meta_Corto_Mejorar": meta_corto_mejorar,
-                "Meta_Corto_Participar": meta_corto_participar,
-                "Meta_Corto_Habilidades": meta_corto_habilidades,
-                "Meta_Corto_Reconocimiento": meta_corto_reconocimiento,
-                "Meta_Corto_Habitos": meta_corto_habitos,
-                "Meta_Corto_Relaciones": meta_corto_relaciones,
+                "Meta_Corto_Aprobar": 1 if meta_corto_aprobar else 0,
+                "Meta_Corto_Mejorar": 1 if meta_corto_mejorar else 0,
+                "Meta_Corto_Participar": 1 if meta_corto_participar else 0,
+                "Meta_Corto_Habilidades": 1 if meta_corto_habilidades else 0,
+                "Meta_Corto_Reconocimiento": 1 if meta_corto_reconocimiento else 0,
+                "Meta_Corto_Habitos": 1 if meta_corto_habitos else 0,
+                "Meta_Corto_Relaciones": 1 if meta_corto_relaciones else 0,
                 "Metas_Corto_Score": metas_corto_score,
                 "Metas_Corto_Normalizado": metas_corto_normalizado,
                 # Metas largo plazo
-                "Meta_Largo_Universidad": meta_largo_universidad,
-                "Meta_Largo_Carrera": meta_largo_carrera,
-                "Meta_Largo_Becas": meta_largo_becas,
-                "Meta_Largo_Competencias": meta_largo_competencias,
-                "Meta_Largo_Investigacion": meta_largo_investigacion,
-                "Meta_Largo_Impacto": meta_largo_impacto,
-                "Meta_Largo_Red": meta_largo_red,
+                "Meta_Largo_Universidad": 1 if meta_largo_universidad else 0,
+                "Meta_Largo_Carrera": 1 if meta_largo_carrera else 0,
+                "Meta_Largo_Becas": 1 if meta_largo_becas else 0,
+                "Meta_Largo_Competencias": 1 if meta_largo_competencias else 0,
+                "Meta_Largo_Investigacion": 1 if meta_largo_investigacion else 0,
+                "Meta_Largo_Impacto": 1 if meta_largo_impacto else 0,
+                "Meta_Largo_Red": 1 if meta_largo_red else 0,
                 "Metas_Largo_Score": metas_largo_score,
                 "Metas_Largo_Normalizado": metas_largo_normalizado,
                 # Contexto ampliado
-                "Trans_Publico": trans_publico,
-                "Trans_Privado": trans_privado,
-                "Trans_Camina": trans_camina,
+                "Trans_Publico": 1 if trans_publico else 0,
+                "Trans_Privado": 1 if trans_privado else 0,
+                "Trans_Camina": 1 if trans_camina else 0,
                 "Transporte_Score": transporte_score,
                 "Transporte_Normalizado": transporte_normalizado,
-                "Serv_Agua": serv_agua,
-                "Serv_Luz": serv_luz,
-                "Serv_Internet": serv_internet,
-                "Serv_Saneamiento": serv_saneamiento,
-                "Serv_Ninguno": serv_ninguno,
+                "Serv_Agua": 1 if serv_agua else 0,
+                "Serv_Luz": 1 if serv_luz else 0,
+                "Serv_Internet": 1 if serv_internet else 0,
+                "Serv_Saneamiento": 1 if serv_saneamiento else 0,
+                "Serv_Ninguno": 1 if serv_ninguno else 0,
                 "Servicios_Score": servicios_score,
                 "Servicios_Normalizado": servicios_normalizado,
                 "Exposicion_Drogas": exposicion_drogas,
-                "Cult_Biblioteca": cult_biblioteca,
-                "Cult_Museo": cult_museo,
-                "Cult_Cine": cult_cine,
-                "Cult_Parques": cult_parques,
-                "Cult_Otro": cult_otro,
+                "Cult_Biblioteca": 1 if cult_biblioteca else 0,
+                "Cult_Museo": 1 if cult_museo else 0,
+                "Cult_Cine": 1 if cult_cine else 0,
+                "Cult_Parques": 1 if cult_parques else 0,
+                "Cult_Otro": 1 if cult_otro else 0,
                 "Cultura_Score": cultura_score,
                 "Cultura_Normalizado": cultura_normalizado,
             }
             
-            # Save to CSV
-            csv_file = "evaluaciones_estudiantes.csv"
+            # Save to CSV in datasets folder
+            datasets_folder = os.path.join(os.path.dirname(__file__), "..", "datasets")
+            os.makedirs(datasets_folder, exist_ok=True)
+            csv_file = os.path.join(datasets_folder, "evaluaciones_estudiantes.csv")
             df_new = pd.DataFrame([student_data])
             
             if os.path.exists(csv_file):
@@ -919,7 +894,7 @@ with st.form("student_form"):
             else:
                 df_new.to_csv(csv_file, index=False)
             
-            st.info(f"📁 Datos guardados en {csv_file}")
+            st.info(f"📁 Datos guardados en {os.path.basename(csv_file)}")
 
 # Sidebar
 st.sidebar.title("ℹ️ Información")
@@ -936,9 +911,12 @@ st.sidebar.info(
 )
 
 st.sidebar.title("📊 Estadísticas")
-if os.path.exists("evaluaciones_estudiantes.csv"):
+datasets_folder = os.path.join(os.path.dirname(__file__), "..", "datasets")
+csv_file_path = os.path.join(datasets_folder, "evaluaciones_estudiantes.csv")
+
+if os.path.exists(csv_file_path):
     try:
-        df = pd.read_csv("evaluaciones_estudiantes.csv")
+        df = pd.read_csv(csv_file_path)
     except pd.errors.EmptyDataError:
         df = pd.DataFrame()
 
