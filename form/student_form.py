@@ -11,11 +11,12 @@ st.set_page_config(
 )
 
 # Cached function to load and calculate statistics
-@st.cache_data
+@st.cache_data(ttl=60)
 def load_statistics(csv_file="evaluaciones_estudiantes.csv"):
     """
     Load CSV data and calculate statistics.
-    This function is cached to avoid recalculating on every page render.
+    This function is cached with a 60-second TTL to avoid recalculating on every page render
+    while ensuring the cache updates when the CSV file is modified.
     """
     if not os.path.exists(csv_file):
         return {
@@ -33,14 +34,14 @@ def load_statistics(csv_file="evaluaciones_estudiantes.csv"):
             "stats": None
         }
     
-    total = len(df)
-    
     if df.empty:
         return {
             "exists": True,
-            "total": total,
+            "total": 0,
             "stats": None
         }
+    
+    total = len(df)
     
     # Calculate statistics if required columns exist
     required_columns = {"Seguridad_Barrio", "Motivacion_Estudio", "Apoyo_Familiar"}
