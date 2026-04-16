@@ -208,3 +208,213 @@ id_estudiante,año_academico,semestre,asignatura,aula,P1,P2,P3,P4,CF,asistencia
 10,2025-2026,2,Educación Física,Aula 1,82,80,85,78,81.25,90
 10,2025-2026,2,Formación Humana y Religiosa,Aula 1,70,72,68,74,71,80
 10,2025-2026,2,Informática,Aula 1,75,78,72,80,76.25,88
+,,,,,,,,,,
+11,2025-2026,1,Lengua y Literatura,Aula 1,85,90,86,87,87,88
+11,2025-2026,1,Inglés,Aula 1,70,75,71,72,72,89
+11,2025-2026,1,Francés,Aula 1,68,73,69,70,70,87
+11,2025-2026,1,Matemática,Aula 1,60,65,61,62,62,90
+11,2025-2026,1,Ciencias Sociales,Aula 1,76,81,77,78,78,88
+11,2025-2026,1,Ciencias de la Naturaleza,Aula 1,64,69,65,66,66,88
+11,2025-2026,1,Educación Artística,Aula 1,91,96,92,93,93,92
+11,2025-2026,1,Educación Física,Aula 1,78,83,79,80,80,90
+11,2025-2026,1,Formación Humana y Religiosa,Aula 1,81,86,82,83,83,87
+11,2025-2026,1,Informática,Aula 1,72,77,73,74,74,89
+11,2025-2026,2,Lengua y Literatura,Aula 1,87,92,88,89,89,90
+11,2025-2026,2,Inglés,Aula 1,72,77,73,74,74,91
+11,2025-2026,2,Francés,Aula 1,70,75,71,72,72,89
+11,2025-2026,2,Matemática,Aula 1,62,67,63,64,64,91
+11,2025-2026,2,Ciencias Sociales,Aula 1,78,83,79,80,80,89
+11,2025-2026,2,Ciencias de la Naturaleza,Aula 1,66,71,67,68,68,90
+11,2025-2026,2,Educación Artística,Aula 1,93,98,94,95,95,92
+11,2025-2026,2,Educación Física,Aula 1,80,85,81,82,82,91
+11,2025-2026,2,Formación Humana y Religiosa,Aula 1,83,88,84,85,85,88
+11,2025-2026,2,Informática,Aula 1,74,79,75,76,76,90
+,,,,,,,,,,
+12,2025-2026,1,Lengua y Literatura,Aula 1,76,81,77,78,78,92
+12,2025-2026,1,Inglés,Aula 1,74,79,75,76,76,91
+12,2025-2026,1,Francés,Aula 1,72,77,73,74,74,90
+12,2025-2026,1,Matemática,Aula 1,89,94,90,91,91,95
+12,2025-2026,1,Ciencias Sociales,Aula 1,80,85,81,82,82,93
+12,2025-2026,1,Ciencias de la Naturaleza,Aula 1,87,92,88,89,89,94
+12,2025-2026,1,Educación Artística,Aula 1,90,95,91,92,92,96
+12,2025-2026,1,Educación Física,Aula 1,81,86,82,83,83,92
+12,2025-2026,1,Formación Humana y Religiosa,Aula 1,78,83,79,80,80,91
+12,2025-2026,1,Informática,Aula 1,87,92,88,89,89,94
+12,2025-2026,2,Lengua y Literatura,Aula 1,78,83,79,80,80,93
+12,2025-2026,2,Inglés,Aula 1,76,81,77,78,78,92
+12,2025-2026,2,Francés,Aula 1,74,79,75,76,76,91
+12,2025-2026,2,Matemática,Aula 1,91,96,92,93,93,96
+12,2025-2026,2,Ciencias Sociales,Aula 1,82,87,83,84,84,94
+12,2025-2026,2,Ciencias de la Naturaleza,Aula 1,89,94,90,91,91,95
+12,2025-2026,2,Educación Artística,Aula 1,92,97,93,94,94,96
+12,2025-2026,2,Educación Física,Aula 1,83,88,84,85,85,93
+12,2025-2026,2,Formación Humana y Religiosa,Aula 1,80,85,81,82,82,92
+12,2025-2026,2,Informática,Aula 1,89,94,90,91,91,95
+,,,,,,,,,,
+13,2025-2026,1,Lengua y Literatura,Aula 1,92,97,93,94,94,97
+13,2025-2026,1,Inglés,Aula 1,89,94,90,91,91,96
+13,2025-2026,1,Francés,Aula 1,86,91,87,88,88,95
+13,2025-2026,1,Matemática,Aula 1,70,75,71,72,72,96
+13,2025-2026,1,Ciencias Sociales,Aula 1,94,99,95,96,96,98
+13,2025-2026,1,Ciencias de la Naturaleza,Aula 1,71,76,72,73,73,95
+13,2025-2026,1,Educación Artística,Aula 1,79,84,80,81,81,96
+13,2025-2026,1,Educación Física,Aula 1,80,85,81,82,82,97
+13,2025-2026,1,Formación Humana y Religiosa,Aula 1,88,93,89,90,90,98
+13,2025-2026,1,Informática,Aula 1,79,84,80,81,81,96
+13,2025-2026,2,Lengua y Literatura,Aula 1,94,99,95,96,96,98
+13,2025-2026,2,Inglés,Aula 1,91,96,92,93,93,97
+13,2025-2026,2,Francés,Aula 1,88,93,89,90,90,96
+13,2025-2026,2,Matemática,Aula 1,72,77,73,74,74,97
+13,2025-2026,2,Ciencias Sociales,Aula 1,96,100,97,98,97.75,99
+13,2025-2026,2,Ciencias de la Naturaleza,Aula 1,73,78,74,75,75,96
+13,2025-2026,2,Educación Artística,Aula 1,81,86,82,83,83,97
+13,2025-2026,2,Educación Física,Aula 1,82,87,83,84,84,98
+13,2025-2026,2,Formación Humana y Religiosa,Aula 1,90,95,91,92,92,99
+13,2025-2026,2,Informática,Aula 1,81,86,82,83,83,97
+,,,,,,,,,,
+14,2025-2026,1,Lengua y Literatura,Aula 1,83,88,84,85,85,93
+14,2025-2026,1,Inglés,Aula 1,86,91,87,88,88,95
+14,2025-2026,1,Francés,Aula 1,81,86,82,83,83,92
+14,2025-2026,1,Matemática,Aula 1,89,94,90,91,91,95
+14,2025-2026,1,Ciencias Sociales,Aula 1,85,90,86,87,87,94
+14,2025-2026,1,Ciencias de la Naturaleza,Aula 1,95,100,96,97,97,97
+14,2025-2026,1,Educación Artística,Aula 1,72,77,73,74,74,92
+14,2025-2026,1,Educación Física,Aula 1,77,82,78,79,79,93
+14,2025-2026,1,Formación Humana y Religiosa,Aula 1,84,89,85,86,86,95
+14,2025-2026,1,Informática,Aula 1,87,92,88,89,89,94
+14,2025-2026,2,Lengua y Literatura,Aula 1,85,90,86,87,87,94
+14,2025-2026,2,Inglés,Aula 1,88,93,89,90,90,96
+14,2025-2026,2,Francés,Aula 1,83,88,84,85,85,93
+14,2025-2026,2,Matemática,Aula 1,91,96,92,93,93,96
+14,2025-2026,2,Ciencias Sociales,Aula 1,87,92,88,89,89,95
+14,2025-2026,2,Ciencias de la Naturaleza,Aula 1,97,100,98,99,98.5,97
+14,2025-2026,2,Educación Artística,Aula 1,74,79,75,76,76,93
+14,2025-2026,2,Educación Física,Aula 1,79,84,80,81,81,94
+14,2025-2026,2,Formación Humana y Religiosa,Aula 1,86,91,87,88,88,96
+14,2025-2026,2,Informática,Aula 1,89,94,90,91,91,95
+,,,,,,,,,,
+15,2025-2026,1,Lengua y Literatura,Aula 1,87,92,88,89,89,95
+15,2025-2026,1,Inglés,Aula 1,88,93,89,90,90,96
+15,2025-2026,1,Francés,Aula 1,84,89,85,86,86,95
+15,2025-2026,1,Matemática,Aula 1,92,97,93,94,94,97
+15,2025-2026,1,Ciencias Sociales,Aula 1,90,95,91,92,92,96
+15,2025-2026,1,Ciencias de la Naturaleza,Aula 1,83,88,84,85,85,94
+15,2025-2026,1,Educación Artística,Aula 1,72,77,73,74,74,95
+15,2025-2026,1,Educación Física,Aula 1,78,83,79,80,80,96
+15,2025-2026,1,Formación Humana y Religiosa,Aula 1,86,91,87,88,88,97
+15,2025-2026,1,Informática,Aula 1,89,94,90,91,91,96
+15,2025-2026,2,Lengua y Literatura,Aula 1,89,94,90,91,91,96
+15,2025-2026,2,Inglés,Aula 1,90,95,91,92,92,97
+15,2025-2026,2,Francés,Aula 1,86,91,87,88,88,96
+15,2025-2026,2,Matemática,Aula 1,94,99,95,96,96,98
+15,2025-2026,2,Ciencias Sociales,Aula 1,92,97,93,94,94,97
+15,2025-2026,2,Ciencias de la Naturaleza,Aula 1,85,90,86,87,87,95
+15,2025-2026,2,Educación Artística,Aula 1,74,79,75,76,76,96
+15,2025-2026,2,Educación Física,Aula 1,80,85,81,82,82,97
+15,2025-2026,2,Formación Humana y Religiosa,Aula 1,88,93,89,90,90,98
+15,2025-2026,2,Informática,Aula 1,91,96,92,93,93,97
+,,,,,,,,,,
+16,2025-2026,1,Lengua y Literatura,Aula 1,78,83,79,80,80,87
+16,2025-2026,1,Inglés,Aula 1,66,71,67,68,68,87
+16,2025-2026,1,Francés,Aula 1,64,69,65,66,66,86
+16,2025-2026,1,Matemática,Aula 1,73,78,74,75,75,88
+16,2025-2026,1,Ciencias Sociales,Aula 1,85,90,86,87,87,91
+16,2025-2026,1,Ciencias de la Naturaleza,Aula 1,92,97,93,94,94,93
+16,2025-2026,1,Educación Artística,Aula 1,77,82,78,79,79,88
+16,2025-2026,1,Educación Física,Aula 1,83,88,84,85,85,90
+16,2025-2026,1,Formación Humana y Religiosa,Aula 1,81,86,82,83,83,89
+16,2025-2026,1,Informática,Aula 1,75,80,76,77,77,88
+16,2025-2026,2,Lengua y Literatura,Aula 1,80,85,81,82,82,88
+16,2025-2026,2,Inglés,Aula 1,68,73,69,70,70,88
+16,2025-2026,2,Francés,Aula 1,66,71,67,68,68,87
+16,2025-2026,2,Matemática,Aula 1,75,80,76,77,77,89
+16,2025-2026,2,Ciencias Sociales,Aula 1,87,92,88,89,89,92
+16,2025-2026,2,Ciencias de la Naturaleza,Aula 1,94,99,95,96,96,93
+16,2025-2026,2,Educación Artística,Aula 1,79,84,80,81,81,89
+16,2025-2026,2,Educación Física,Aula 1,85,90,86,87,87,91
+16,2025-2026,2,Formación Humana y Religiosa,Aula 1,83,88,84,85,85,90
+16,2025-2026,2,Informática,Aula 1,77,82,78,79,79,89
+,,,,,,,,,,
+17,2025-2026,1,Lengua y Literatura,Aula 1,89,94,90,91,91,94
+17,2025-2026,1,Inglés,Aula 1,83,88,84,85,85,94
+17,2025-2026,1,Francés,Aula 1,81,86,82,83,83,93
+17,2025-2026,1,Matemática,Aula 1,74,79,75,76,76,94
+17,2025-2026,1,Ciencias Sociales,Aula 1,92,97,93,94,94,96
+17,2025-2026,1,Ciencias de la Naturaleza,Aula 1,77,82,78,79,79,93
+17,2025-2026,1,Educación Artística,Aula 1,81,86,82,83,83,95
+17,2025-2026,1,Educación Física,Aula 1,77,82,78,79,79,94
+17,2025-2026,1,Formación Humana y Religiosa,Aula 1,94,99,95,96,96,98
+17,2025-2026,1,Informática,Aula 1,79,84,80,81,81,94
+17,2025-2026,2,Lengua y Literatura,Aula 1,91,96,92,93,93,95
+17,2025-2026,2,Inglés,Aula 1,85,90,86,87,87,95
+17,2025-2026,2,Francés,Aula 1,83,88,84,85,85,94
+17,2025-2026,2,Matemática,Aula 1,76,81,77,78,78,95
+17,2025-2026,2,Ciencias Sociales,Aula 1,94,99,95,96,96,97
+17,2025-2026,2,Ciencias de la Naturaleza,Aula 1,79,84,80,81,81,94
+17,2025-2026,2,Educación Artística,Aula 1,83,88,84,85,85,96
+17,2025-2026,2,Educación Física,Aula 1,79,84,80,81,81,95
+17,2025-2026,2,Formación Humana y Religiosa,Aula 1,96,100,97,98,97.75,98
+17,2025-2026,2,Informática,Aula 1,81,86,82,83,83,95
+,,,,,,,,,,
+18,2025-2026,1,Lengua y Literatura,Aula 1,73,78,74,75,75,87
+18,2025-2026,1,Inglés,Aula 1,63,68,64,65,65,87
+18,2025-2026,1,Francés,Aula 1,66,71,67,68,68,88
+18,2025-2026,1,Matemática,Aula 1,75,80,76,77,77,88
+18,2025-2026,1,Ciencias Sociales,Aula 1,77,82,78,79,79,89
+18,2025-2026,1,Ciencias de la Naturaleza,Aula 1,83,88,84,85,85,91
+18,2025-2026,1,Educación Artística,Aula 1,86,91,87,88,88,92
+18,2025-2026,1,Educación Física,Aula 1,81,86,82,83,83,90
+18,2025-2026,1,Formación Humana y Religiosa,Aula 1,79,84,80,81,81,88
+18,2025-2026,1,Informática,Aula 1,77,82,78,79,79,88
+18,2025-2026,2,Lengua y Literatura,Aula 1,75,80,76,77,77,88
+18,2025-2026,2,Inglés,Aula 1,65,70,66,67,67,88
+18,2025-2026,2,Francés,Aula 1,68,73,69,70,70,89
+18,2025-2026,2,Matemática,Aula 1,77,82,78,79,79,89
+18,2025-2026,2,Ciencias Sociales,Aula 1,79,84,80,81,81,90
+18,2025-2026,2,Ciencias de la Naturaleza,Aula 1,85,90,86,87,87,92
+18,2025-2026,2,Educación Artística,Aula 1,88,93,89,90,90,92
+18,2025-2026,2,Educación Física,Aula 1,83,88,84,85,85,91
+18,2025-2026,2,Formación Humana y Religiosa,Aula 1,81,86,82,83,83,89
+18,2025-2026,2,Informática,Aula 1,79,84,80,81,81,89
+,,,,,,,,,,
+19,2025-2026,1,Lengua y Literatura,Aula 1,41,46,42,43,43,60
+19,2025-2026,1,Inglés,Aula 1,44,49,45,46,46,62
+19,2025-2026,1,Francés,Aula 1,47,52,48,49,49,65
+19,2025-2026,1,Matemática,Aula 1,39,44,40,41,41,56
+19,2025-2026,1,Ciencias Sociales,Aula 1,49,54,50,51,51,64
+19,2025-2026,1,Ciencias de la Naturaleza,Aula 1,43,48,44,45,45,58
+19,2025-2026,1,Educación Artística,Aula 1,61,66,62,63,63,67
+19,2025-2026,1,Educación Física,Aula 1,54,59,55,56,56,68
+19,2025-2026,1,Formación Humana y Religiosa,Aula 1,45,50,46,47,47,60
+19,2025-2026,1,Informática,Aula 1,57,62,58,59,59,66
+19,2025-2026,2,Lengua y Literatura,Aula 1,43,48,44,45,45,62
+19,2025-2026,2,Inglés,Aula 1,46,51,47,48,48,63
+19,2025-2026,2,Francés,Aula 1,49,54,50,51,51,66
+19,2025-2026,2,Matemática,Aula 1,41,46,42,43,43,58
+19,2025-2026,2,Ciencias Sociales,Aula 1,51,56,52,53,53,65
+19,2025-2026,2,Ciencias de la Naturaleza,Aula 1,45,50,46,47,47,60
+19,2025-2026,2,Educación Artística,Aula 1,63,68,64,65,65,68
+19,2025-2026,2,Educación Física,Aula 1,56,61,57,58,58,69
+19,2025-2026,2,Formación Humana y Religiosa,Aula 1,47,52,48,49,49,62
+19,2025-2026,2,Informática,Aula 1,59,64,60,61,61,67
+,,,,,,,,,,
+20,2025-2026,1,Lengua y Literatura,Aula 1,73,78,74,75,75,85
+20,2025-2026,1,Inglés,Aula 1,77,82,78,79,79,86
+20,2025-2026,1,Francés,Aula 1,69,74,70,71,71,83
+20,2025-2026,1,Matemática,Aula 1,87,92,88,89,89,89
+20,2025-2026,1,Ciencias Sociales,Aula 1,74,79,75,76,76,85
+20,2025-2026,1,Ciencias de la Naturaleza,Aula 1,81,86,82,83,83,87
+20,2025-2026,1,Educación Artística,Aula 1,71,76,72,73,73,84
+20,2025-2026,1,Educación Física,Aula 1,75,80,76,77,77,85
+20,2025-2026,1,Formación Humana y Religiosa,Aula 1,69,74,70,71,71,83
+20,2025-2026,1,Informática,Aula 1,95,100,96,97,97,91
+20,2025-2026,2,Lengua y Literatura,Aula 1,75,80,76,77,77,86
+20,2025-2026,2,Inglés,Aula 1,79,84,80,81,81,87
+20,2025-2026,2,Francés,Aula 1,71,76,72,73,73,85
+20,2025-2026,2,Matemática,Aula 1,89,94,90,91,91,90
+20,2025-2026,2,Ciencias Sociales,Aula 1,76,81,77,78,78,86
+20,2025-2026,2,Ciencias de la Naturaleza,Aula 1,83,88,84,85,85,88
+20,2025-2026,2,Educación Artística,Aula 1,73,78,74,75,75,85
+20,2025-2026,2,Educación Física,Aula 1,77,82,78,79,79,86
+20,2025-2026,2,Formación Humana y Religiosa,Aula 1,71,76,72,73,73,84
+20,2025-2026,2,Informática,Aula 1,97,100,98,99,98.5,91

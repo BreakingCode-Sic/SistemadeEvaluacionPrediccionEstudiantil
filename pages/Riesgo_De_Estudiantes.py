@@ -58,7 +58,7 @@ def load_riesgo_data():
            .merge(obs_est, on="id_estudiante", how="left")
            .merge(df_cs, on="id_estudiante", how="left")
     )
-    df["CS"] = df["CS"].fillna(0.5)  # valor por defecto si no hay formulario
+    # CS queda como NaN si no hay formulario; calcular_riesgo lo maneja
 
     return df
 
@@ -120,17 +120,19 @@ st.subheader("📋 Detalle por estudiante")
 
 df_show = df_riesgo.copy()
 df_show["nota_promedio"] = df_show["nota_promedio"].round(1)
+df_show["Formulario"] = df_show["CS"].notna().map({True: "✅", False: "—"})
+df_show["CS"] = df_show["CS"].fillna(float("nan"))
 
 st.dataframe(
     df_show[
         ["id_estudiante", "nombre_estudiante",
-         "nota_promedio", "asistencia", "F", "Rd", "CS"]
+         "nota_promedio", "asistencia", "F", "CS", "Formulario", "Rd"]
     ].style.format({
         "nota_promedio": "{:.1f}",
         "asistencia": "{:.2f}%",
         "F": "{:.2f}",
+        "CS": lambda v: f"{v:.2f}" if v == v else "—",
         "Rd": "{:.1%}",
-        "CS": "{:.2f}"
     }),
     use_container_width=True
 )
@@ -174,6 +176,7 @@ else:
 
 st.markdown("---")
 st.caption(
-    "Modelo hibrido NLP + formula "
-    "Rd = 0.25·(1-A) + 0.25·(max(0,75-N)/100) + 0.5·(1-F)"
+    "Modelo hibrido NLP + formula | "
+    "Con formulario: Rd = 0.25·(1-A) + 0.25·max(0,75-N)/100 + 0.25·(1-F) + 0.25·(1-CS) | "
+    "Sin formulario: Rd = ⅓·(1-A) + ⅓·max(0,75-N)/100 + ⅓·(1-F)"
 )

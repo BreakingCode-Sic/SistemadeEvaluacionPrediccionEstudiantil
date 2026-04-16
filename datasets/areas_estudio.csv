@@ -1,31 +1,35 @@
 id_area,nombre_area,descripcion
-1,Ingeniería de Software,"Enfocado en lógica,  patrones,  pensamiento estructurado y tecnología."
-2,Ingeniería Civil,Ideal para estudiantes con razonamiento espacial y matemático aplicado.
-3,Ingeniería Química,"Para estudiantes fuertes en química,  ciencia y procesos industriales."
-4,Ingeniería Mecánica,Para perfiles analíticos con interés en máquinas y sistemas físicos.
-5,Medicina,"Para estudiantes disciplinados,  responsables,  consistentes y empáticos."
-6,Enfermería,"Para estudiantes pacientes,  cuidadosos y con vocación de servicio."
-7,Psicología,"Para perfiles reflexivos,  empáticos y comunicativos."
-8,Derecho,"Para estudiantes argumentativos,  diplomáticos y lectores intensivos."
-9,Economía,Para estudiantes analíticos con alto pensamiento numérico.
-10,Contabilidad,Para estudiantes organizados y detallistas.
-11,Marketing Digital,"Para estudiantes creativos,  sociables e innovadores."
-12,Diseño Gráfico,Para perfiles visuales y altamente creativos.
-13,Arquitectura,Para estudiantes creativos con razonamiento espacial.
-14,Piloto de Aviación,"Para estudiantes disciplinados,  de alta concentración y sangre fría."
-15,Militar/Policial,Para perfiles disciplinados y de alta condición física.
-16,Atleta Profesional,Para estudiantes con alto rendimiento físico y hábitos deportivos.
-17,Profesor de Matemáticas,Para estudiantes con razonamiento lógico fuerte.
-18,Profesor de Inglés,Para estudiantes comunicativos y con habilidades lingüísticas.
-19,Chef Profesional,"Para estudiantes creativos,  prácticos y detallistas."
-20,Agrimensura,Para estudiantes con precisión matemática y gusto por el campo/medición.
-21,Agronomía,Para estudiantes que destacan en biología y trabajo práctico.
-22,Programador de Videojuegos,Para estudiantes con creatividad + lógica.
-23,Ciberseguridad,"Para estudiantes meticulosos,  analíticos y persistentes."
-24,Diseño Industrial,Para estudiantes creativos + técnicos.
-25,Administración de Empresas,Para estudiantes organizados y comunicativos.
-26,Recursos Humanos,"Para estudiantes empáticos,  sociales y organizados."
-27,Comunicación Social,Para estudiantes expresivos y sociables.
-28,Periodismo,Para estudiantes curiosos y comunicadores fuertes.
-29,Logística y Transporte,Para estudiantes organizados y orientados a procesos.
-30,Técnico en Redes,Para estudiantes prácticos y orientados a hardware/sistemas.
+1,Ingeniería de Software,"Desarrollo de software, programación, algoritmos, estructuras de datos, lógica computacional, aplicaciones, sistemas, código, tecnología e inteligencia artificial."
+2,Ingeniería Civil,"Diseño y construcción de puentes, edificios, rascacielos, estructuras, vías, carreteras, infraestructura urbana, maquetas, cálculo estructural y obras civiles."
+3,Ingeniería Química,"Procesos químicos industriales, laboratorio, reacciones, síntesis, materiales, química aplicada, producción de sustancias y experimentos científicos."
+4,Ingeniería Mecánica,"Diseño de máquinas, motores, mecanismos, sistemas físicos, manufactura, robótica, energía y análisis de fuerzas y movimiento."
+5,Medicina,"Ciencias de la salud, biología humana, anatomía, diagnóstico de enfermedades, tratamiento de pacientes, cirugía, farmacología y cuidado médico."
+6,Enfermería,"Cuidado directo de pacientes, salud, administración de medicamentos, atención hospitalaria, primeros auxilios y apoyo emocional al enfermo."
+7,Psicología,"Comportamiento humano, emociones, salud mental, terapia, mente, cognición, conducta, motivación y bienestar psicológico."
+8,Derecho,"Leyes, justicia, argumentación legal, juicios, constitución, contratos, derechos humanos, defensa, legislación y oratoria jurídica."
+9,Economía,"Mercados, finanzas, análisis macroeconómico, modelos matemáticos, indicadores económicos, oferta, demanda, estadística e inversión."
+10,Contabilidad,"Registro financiero, balances, estados de cuenta, auditoría, impuestos, presupuestos, flujo de caja y control de gastos empresariales."
+11,Marketing Digital,"Publicidad, redes sociales, campañas digitales, branding, estrategia comercial, audiencias, contenido y posicionamiento de marca."
+12,Diseño Gráfico,"Creación visual, ilustración, tipografía, pósters, logotipos, colores, composición visual, identidad gráfica y comunicación a través de imágenes."
+13,Arquitectura,"Diseño de espacios, planos, edificios, viviendas, urbanismo, estética constructiva, maquetas arquitectónicas y planificación de ciudades."
+14,Piloto de Aviación,"Aeronáutica, vuelo, aviones, navegación aérea, meteorología, instrumentos de cabina, física del vuelo y control de aeronaves."
+15,Militar/Policial,"Seguridad, defensa nacional, orden público, táctica, disciplina, estrategia, protección ciudadana y entrenamiento físico intensivo."
+16,Atleta Profesional,"Deporte de alto rendimiento, entrenamiento físico, competencia, disciplina atlética, resistencia, coordinación y técnica deportiva."
+17,Profesor de Matemáticas,"Enseñanza, álgebra, geometría, cálculo, lógica matemática, explicación de conceptos numéricos y resolución de problemas."
+18,Profesor de Inglés,"Enseñanza de idiomas, gramática inglesa, pronunciación, literatura en inglés, traducción y comunicación intercultural."
+19,Chef Profesional,"Gastronomía, cocina, recetas, técnicas culinarias, sabores, ingredientes, presentación de platos y creatividad en la cocina."
+20,Agrimensura,"Medición de terrenos, topografía, levantamiento de planos, coordenadas geográficas, instrumentos de medición y cartografía."
+21,Agronomía,"Cultivos, suelos, agricultura, plantas, producción de alimentos, biología vegetal, riego y técnicas de siembra."
+22,Programador de Videojuegos,"Desarrollo de videojuegos, motores gráficos, programación, animación, diseño de niveles, física de juegos y entretenimiento digital."
+23,Ciberseguridad,"Seguridad informática, redes, hacking ético, protección de datos, vulnerabilidades, sistemas, criptografía y análisis de amenazas digitales."
+24,Diseño Industrial,"Diseño de productos físicos, ergonomía, prototipos, manufactura, materiales, funcionalidad y estética de objetos."
+25,Administración de Empresas,"Gestión de organizaciones, liderazgo, planificación estratégica, recursos humanos, finanzas empresariales y toma de decisiones."
+26,Recursos Humanos,"Gestión de personas, selección de personal, clima organizacional, capacitación, bienestar laboral y relaciones entre trabajadores."
+27,Comunicación Social,"Medios de comunicación, periodismo audiovisual, producción de contenido, relaciones públicas, radio, televisión y redes sociales."
+28,Periodismo,"Reportaje, investigación periodística, entrevistas, redacción de noticias, análisis de información y comunicación escrita y oral."
+29,Logística y Transporte,"Cadena de suministro, distribución, almacenamiento, rutas de transporte, inventario, importación y exportación de mercancías."
+30,Técnico en Redes,"Instalación y configuración de redes informáticas, hardware, cables, routers, switches, servidores y soporte técnico."
+31,Artes Escénicas,"Teatro, actuación, danza, expresión corporal, dirección escénica, guión teatral, pantomima, técnicas de voz, performance artístico y artes del espectáculo en vivo."
+32,Veterinaria,"Salud animal, medicina veterinaria, cirugía de animales domésticos y silvestres, diagnóstico de enfermedades, zoología, etología y bienestar animal."
+33,Fisioterapia,"Rehabilitación física, terapia de movimiento, lesiones musculoesqueléticas, ejercicios terapéuticos, kinesiología, columna vertebral, articulaciones y recuperación corporal."
+34,Nutrición y Dietética,"Alimentación saludable, dietas terapéuticas, metabolismo, macronutrientes, vitaminas, micronutrientes, planificación nutricional y ciencias de la alimentación."

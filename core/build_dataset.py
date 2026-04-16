@@ -134,7 +134,7 @@ def build_master_dataset(
         .merge(cs, on="id_estudiante", how="left")
     )
 
-    df["CS"] = df["CS"].fillna(0.5)
+    # CS queda como NaN si no hay formulario; calcular_riesgo lo maneja
 
     # RIESGO 
     df[["Rd", "F"]] = df.apply(

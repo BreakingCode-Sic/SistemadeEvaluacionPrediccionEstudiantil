@@ -8,7 +8,6 @@ from core.config import (
     PALABRAS_NUMERO,
     PALABRAS_SOCIAL,
     MODIFICADORES,
-    RIESGO_EXPR
 )
 
 
@@ -23,11 +22,5 @@ def calc_scores(obs_list):
     sc = score_keywords(texto, PALABRAS_CIENCIA, MODIFICADORES)
     sn = score_keywords(texto, PALABRAS_NUMERO, MODIFICADORES)
     ss = score_keywords(texto, PALABRAS_SOCIAL, MODIFICADORES)
-
-    riesgo = score_keywords(texto, RIESGO_EXPR)
-
-    sc -= riesgo * 0.2
-    sn -= riesgo * 0.2
-    ss -= riesgo * 0.2
 
     return max(0, sc), max(0, sn), max(0, ss)

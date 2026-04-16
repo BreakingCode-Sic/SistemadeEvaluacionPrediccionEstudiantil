@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from core.data_loader import load_master, load_areas
-from core.perfil_textual import generar_perfil_textual
+from core.perfil_textual import generar_perfil_textual, generar_descripcion_final
 from core.semantic_matcher import recomendar_areas
 
 # CONFIG STREAMLIT
@@ -49,14 +49,16 @@ c1, c2, c3 = st.columns(3)
 
 c1.metric("Nota promedio", f"{row['nota_promedio']:.1f}")
 c2.metric("Asistencia", f"{row['asistencia']:.1f}%")
-c3.metric("Contexto social (CS)", f"{row['CS']:.2f}")
+cs_val = row['CS']
+import math
+c3.metric("Contexto social (CS)", f"{cs_val:.2f}" if (cs_val == cs_val and not math.isnan(float(cs_val))) else "Sin formulario")
 
-# PERFIL TEXTUAL
-
-st.subheader("🧠 Perfil integral del estudiante")
+# PERFIL TEXTUAL (usado internamente para el matching semántico)
 
 perfil_texto = generar_perfil_textual(row)
-st.write(perfil_texto)
+
+with st.expander("🧠 Ver perfil técnico del estudiante"):
+    st.write(perfil_texto)
 
 # RECOMENDACION DE AREAS
 
@@ -118,6 +120,13 @@ if isinstance(row["observaciones"], str) and len(row["observaciones"]) > 0:
             st.write("• " + obs.strip())
 else:
     st.info("Este estudiante no tiene observaciones registradas.")
+
+# INFORME FINAL
+
+st.subheader("📋 Informe final del estudiante")
+
+informe = generar_descripcion_final(row, ranking)
+st.markdown(informe)
 
 # FOOTER
 

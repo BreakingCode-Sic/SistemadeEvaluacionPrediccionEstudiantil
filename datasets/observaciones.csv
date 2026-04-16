@@ -86,3 +86,123 @@ id_observacion,id_estudiante,fecha,autor,observacion
 15,8,2026-02-10,Orientación,Propuso crear un torneo intramural de deportes
 16,8,2026-02-16,Prof. García,Organiza grupos de estudio activos (camina mientras repasa)
 17,8,2026-02-24,Entrenador,Demuestra liderazgo vocal durante partidos
+100,9,2025-08-15,Prof. García,Presentó un póster de diseño gráfico con excelente manejo de tipografía y armonía cromática
+101,9,2025-09-10,Prof. Torres,Diseñó el logotipo oficial de la semana cultural escolar aplicando principios de identidad visual
+102,9,2025-10-05,Coordinación Académica,Creó una campaña de ilustración digital para promover la lectura en la institución
+103,9,2025-11-12,Prof. Martínez,Presentó un portafolio digital con proyectos de composición visual y fotografía artística
+104,9,2025-12-08,Tutor,Domina herramientas de diseño gráfico para crear infografías y presentaciones visuales impactantes
+105,9,2026-01-14,Prof. García,Elaboró una serie de pósters sobre derechos estudiantiles con excelente uso del color y contraste
+106,9,2026-01-28,Prof. López,Muestra conocimiento avanzado de teoría del color aplicada a proyectos de identidad corporativa
+107,9,2026-02-10,Orientación,Participó en concurso regional de diseño gráfico y obtuvo mención honorífica
+108,9,2026-02-25,Prof. Torres,Diseña tipografías personalizadas y experimenta con composición visual en proyectos de clase
+109,9,2026-03-10,Coordinación Académica,Propuso crear un club de diseño gráfico y comunicación visual para estudiantes interesados
+110,10,2025-08-20,Entrenador,Es capitán del equipo de fútbol escolar y demuestra liderazgo sobresaliente en cancha
+111,10,2025-09-15,Prof. Torres,Participó en competencia regional de atletismo y obtuvo segundo lugar en carrera de 400 metros
+112,10,2025-10-08,Entrenador,Sigue rutinas de entrenamiento físico rigurosas con disciplina atlética ejemplar
+113,10,2025-11-18,Coordinación Académica,Representó a la institución en torneo interescolar de fútbol; demostró técnica deportiva destacada
+114,10,2025-12-05,Prof. García,Mostró interés en nutrición deportiva y recuperación atlética para optimizar su rendimiento
+115,10,2026-01-10,Entrenador,Organiza sesiones de acondicionamiento físico para sus compañeros antes de los partidos
+116,10,2026-01-25,Prof. Martínez,Investiga sobre psicología deportiva para mejorar su concentración y manejo de la presión
+117,10,2026-02-12,Coordinación Académica,Ganó beca deportiva para participar en campeonato nacional de atletismo juvenil
+118,10,2026-02-28,Entrenador,Combina entrenamiento de fuerza y coordinación motora con metas de alto rendimiento atlético
+119,10,2026-03-12,Prof. Torres,Demostró resiliencia tras lesión menor; regresó con mayor disciplina y enfoque competitivo
+120,11,2025-08-18,Prof. García,Protagonizó la obra de teatro escolar con dominio excepcional de técnicas de actuación y expresión corporal
+121,11,2025-09-12,Prof. Martínez,Redactó un guión teatral original que fue seleccionado para la muestra artística semestral
+122,11,2025-10-10,Prof. Torres,Participa activamente en el coro escolar con notable afinación vocal y disciplina musical
+123,11,2025-11-05,Coordinación Académica,Dirigió a sus compañeros en un ensayo teatral con responsabilidad y sentido escénico profesional
+124,11,2025-12-01,Prof. López,Toca guitarra y compone canciones breves que integra en sus presentaciones artísticas escolares
+125,11,2026-01-08,Tutor,Memoriza diálogos extensos con rapidez y precisión; talento natural para las artes escénicas
+126,11,2026-01-22,Prof. García,Estudia historia del teatro universal y analiza obras de dramaturgos clásicos y contemporáneos
+127,11,2026-02-05,Orientación,Aspira a ingresar a una escuela de artes escénicas y explora técnicas de danza folclórica
+128,11,2026-02-20,Prof. Torres,Coordina coreografías grupales para actos culturales combinando danza y teatro musical
+129,11,2026-03-08,Coordinación Académica,Lideró producción teatral de fin de semestre con manejo escénico y dirección actoral sobresalientes
+130,12,2025-08-22,Prof. García,Presentó planos arquitectónicos detallados de una vivienda sostenible con uso correcto de escala y perspectiva
+131,12,2025-09-18,Prof. Martínez,Construyó una maqueta arquitectónica de cartón y balsa representando un edificio urbano de cinco plantas
+132,12,2025-10-14,Prof. Torres,Visitó obra de construcción local y elaboró informe técnico sobre sistemas estructurales y materiales utilizados
+133,12,2025-11-10,Coordinación Académica,Analizó edificios históricos de la ciudad identificando estilos arquitectónicos y soluciones de diseño urbano
+134,12,2025-12-06,Tutor,Muestra curiosidad por cálculo estructural y pregunta sobre resistencia de materiales en edificaciones
+135,12,2026-01-12,Prof. García,Dibuja planos con perspectiva isométrica y planta baja mostrando dominio del razonamiento espacial
+136,12,2026-01-26,Prof. López,Propuso rediseñar los espacios del patio escolar con criterios de accesibilidad y arquitectura sostenible
+137,12,2026-02-08,Orientación,Investiga sobre urbanismo y planificación de ciudades sustentables como proyecto personal de largo plazo
+138,12,2026-02-22,Prof. Torres,Construyó maqueta de barrio con sistema vial y zonas verdes aplicando principios de diseño urbano
+139,12,2026-03-10,Coordinación Académica,Ganó primer lugar en concurso escolar de diseño arquitectónico con proyecto de escuela inclusiva
+140,13,2025-08-25,Prof. García,Ganó torneo de debate regional representando a la institución con sólida argumentación jurídica
+141,13,2025-09-20,Prof. Martínez,Preside el comité de derechos estudiantiles y analiza el reglamento escolar con enfoque legal
+142,13,2025-10-16,Prof. Torres,Estudia derecho constitucional y derechos humanos de manera autodidacta con textos jurídicos especializados
+143,13,2025-11-12,Coordinación Académica,Organizó un foro sobre derechos de los estudiantes invitando a un abogado local como ponente
+144,13,2025-12-08,Tutor,Redacta ensayos de argumentación legal con estructura clara: premisa; argumentos y conclusión jurídica
+145,13,2026-01-15,Prof. García,Simuló un juicio oral en clase actuando como abogada defensora con técnica de oratoria impresionante
+146,13,2026-01-30,Prof. López,Lee jurisprudencia y resoluciones de tribunales para fundamentar sus argumentos en debates escolares
+147,13,2026-02-12,Orientación,Aspira a ser abogada penalista especializada en defensa de derechos humanos y justicia social
+148,13,2026-02-26,Prof. Torres,Organizó taller de oratoria jurídica para compañeros interesados en el área del derecho
+149,13,2026-03-12,Coordinación Académica,Representó a la escuela en olimpiada de ciencias sociales y jurídicas obteniendo medalla de plata
+150,14,2025-08-28,Prof. García,Ganó la olimpiada de biología escolar con proyecto sobre metabolismo celular y bioquímica
+151,14,2025-09-22,Prof. Martínez,Muestra conocimiento detallado de anatomía humana y fisiología de sistemas orgánicos complejos
+152,14,2025-10-18,Prof. Torres,Practicó primeros auxilios con botiquín escolar y atendió con calma una emergencia menor en recreo
+153,14,2025-11-14,Coordinación Académica,Propuso instalar un botiquín de primeros auxilios completo en cada aula y capacitar estudiantes
+154,14,2025-12-10,Tutor,Estudia farmacología básica de forma autodidacta consultando textos de medicina de biblioteca
+155,14,2026-01-16,Prof. García,Presentó proyecto de feria científica sobre cultivo de células y biología molecular con gran rigor
+156,14,2026-01-31,Prof. López,Lee publicaciones médicas en inglés sobre enfermedades emergentes y avances en tratamientos
+157,14,2026-02-14,Orientación,Tiene clara vocación por la medicina y aspira a especializarse en cirugía o investigación clínica
+158,14,2026-02-28,Prof. Torres,Organizó charla sobre prevención de enfermedades infecciosas con apoyo de material didáctico propio
+159,14,2026-03-14,Coordinación Académica,Ganó olimpiada regional de biología y fue seleccionado para representar al país en competencia nacional
+160,15,2025-08-30,Prof. García,Creó una microempresa escolar de artesanías con registro contable básico y estrategia de ventas
+161,15,2025-09-25,Prof. Martínez,Elaboró un plan de marketing para la feria escolar incluyendo análisis de mercado y segmentación
+162,15,2025-10-20,Prof. Torres,Participó en feria de emprendimiento juvenil presentando modelo de negocio con análisis costo-beneficio
+163,15,2025-11-15,Coordinación Académica,Lee libros de administración de empresas y aplica conceptos de liderazgo y gestión organizacional
+164,15,2025-12-12,Tutor,Registra ingresos y egresos de su negocio escolar con estados financieros básicos bien estructurados
+165,15,2026-01-18,Prof. García,Propuso un plan para mejorar la cafetería escolar con control de inventario y reducción de desperdicios
+166,15,2026-02-01,Prof. López,Analiza márgenes de ganancia y costos variables en sus proyectos de emprendimiento estudiantil
+167,15,2026-02-15,Orientación,Lidera el grupo de jóvenes emprendedores escolares y organiza talleres de finanzas personales
+168,15,2026-03-01,Prof. Torres,Diseñó campaña publicitaria digital para su empresa escolar con estrategia en redes sociales
+169,15,2026-03-12,Coordinación Académica,Fue reconocida como mejor emprendedora juvenil del trimestre por su proyecto de administración empresarial
+170,16,2025-08-20,Prof. García,Fundó el club de ecología escolar y organizó el primer huerto escolar con sistema de compostaje
+171,16,2025-09-15,Prof. Martínez,Instaló un sistema de cultivo hidropónico en el laboratorio usando materiales reciclados de bajo costo
+172,16,2025-10-10,Prof. Torres,Investigó tipos de suelos y su relación con la productividad agrícola en climas tropicales
+173,16,2025-11-08,Coordinación Académica,Organizó brigada de reforestación en área verde cercana a la escuela plantando 50 árboles nativos
+174,16,2025-12-05,Tutor,Lee sobre agroecología y manejo sostenible de semillas para producción de alimentos orgánicos
+175,16,2026-01-12,Prof. García,Diseñó un sistema de riego eficiente por goteo para el huerto escolar reduciendo consumo de agua
+176,16,2026-01-28,Prof. López,Propuso jardín de plantas medicinales en terreno escolar con fines educativos y comunitarios
+177,16,2026-02-10,Orientación,Aspira a trabajar en proyectos de seguridad alimentaria y desarrollo agrícola sostenible
+178,16,2026-02-25,Prof. Torres,Presentó proyecto de manejo de residuos orgánicos y producción de abono para el huerto escolar
+179,16,2026-03-10,Coordinación Académica,Ganó concurso regional de proyectos ambientales con su sistema de cultivo hidropónico escolar
+180,17,2025-08-22,Prof. García,Actúa como mediadora voluntaria en conflictos entre compañeros aplicando escucha activa y empatía
+181,17,2025-09-18,Prof. Martínez,Organizó taller de inteligencia emocional para el grupo con dinámicas de autoconocimiento y regulación
+182,17,2025-10-14,Prof. Torres,Lidera el grupo de apoyo en salud mental estudiantil y orienta a compañeros en situaciones difíciles
+183,17,2025-11-10,Coordinación Académica,Lee libros de psicología del desarrollo y cognitivo-conductual para profundizar en comprensión del comportamiento
+184,17,2025-12-06,Tutor,Demostró habilidades de counseling al apoyar a un compañero con crisis de ansiedad de manera efectiva
+185,17,2026-01-14,Prof. García,Facilita actividades de cohesión grupal que mejoran el clima del aula y las relaciones interpersonales
+186,17,2026-01-29,Prof. López,Investiga sobre terapia cognitivo-conductual y neuropsicología como áreas de especialización futura
+187,17,2026-02-12,Orientación,Aspira a convertirse en psicóloga escolar especializada en intervención temprana y salud mental infantil
+188,17,2026-02-26,Psicólogo escolar,Colabora con el equipo de orientación aplicando técnicas de escucha reflexiva en sesiones grupales
+189,17,2026-03-12,Coordinación Académica,Fue reconocida por su excepcional empatía y habilidades de apoyo emocional entre la comunidad estudiantil
+190,18,2025-08-25,Prof. García,Organizó una preparación de recetas en la clase de ciencias explicando reacciones químicas en la cocina
+191,18,2025-09-20,Prof. Martínez,Presentó exposición sobre gastronomía latinoamericana con historia culinaria y técnicas de preparación
+192,18,2025-10-15,Prof. Torres,Ganó concurso de cocina juvenil con receta original que combinó sabores y texturas de forma creativa
+193,18,2025-11-12,Coordinación Académica,Diseñó menús nutricionalmente equilibrados para eventos escolares aplicando conocimientos de dietética
+194,18,2025-12-08,Tutor,Experimenta con especias y técnicas culinarias en casa y documenta sus recetas en un cuaderno personal
+195,18,2026-01-15,Prof. García,Explicó en clase la química de los alimentos y los procesos de fermentación con ejemplos prácticos
+196,18,2026-01-30,Prof. López,Investiga historia culinaria de diferentes culturas y documenta técnicas de cocina internacional
+197,18,2026-02-12,Orientación,Comparte recetas propias en redes sociales y planea especializarse en cocina internacional y repostería
+198,18,2026-02-27,Prof. Torres,Propuso organizar un festival gastronómico escolar con degustación de platos de distintos países
+199,18,2026-03-12,Coordinación Académica,Sueña con abrir su propio restaurante y está explorando escuelas de gastronomía profesional
+200,19,2025-08-28,Orientación,Presenta ausencias injustificadas frecuentes que afectan gravemente su rendimiento académico
+201,19,2025-09-22,Prof. García,Muestra marcado desinterés en la mayoría de las asignaturas y no entrega tareas con regularidad
+202,19,2025-10-18,Psicólogo escolar,Se aísla socialmente durante los recreos y evita participar en actividades grupales del aula
+203,19,2025-11-14,Prof. Martínez,Conflictos frecuentes con compañeros y con algunos docentes que dificultan el proceso de aprendizaje
+204,19,2025-12-10,Orientación,Presenta dificultades familiares severas que impactan directamente en su asistencia y motivación escolar
+205,19,2026-01-15,Psicólogo escolar,Inició proceso de orientación psicológica escolar para abordar desmotivación y problemas de conducta
+206,19,2026-01-30,Prof. Torres,Protagonizó episodio de abandono de aula; se requiere intervención urgente y plan de apoyo integral
+207,19,2026-02-14,Coordinación Académica,Calificaciones por debajo del mínimo en la mayoría de materias; situación académica en riesgo crítico
+208,19,2026-02-28,Psicólogo escolar,Muestra habilidades artísticas incipientes pero la desmotivación generalizada impide su desarrollo pleno
+209,19,2026-03-14,Orientación,Se activó plan de intervención integral con familia y equipo multidisciplinario para prevenir deserción
+210,20,2025-08-30,Prof. García,Desarrolla videojuegos sencillos con motores gráficos en casa y los comparte con compañeros del aula
+211,20,2025-09-25,Prof. Martínez,Programa scripts y modificaciones para videojuegos populares usando Python y JavaScript con fluidez
+212,20,2025-10-20,Prof. Torres,Participó en game jam escolar y desarrolló un prototipo de juego en 48 horas con mecánicas originales
+213,20,2025-11-15,Coordinación Académica,Apasionado por el diseño de niveles y la narrativa interactiva en el desarrollo de videojuegos indie
+214,20,2025-12-12,Tutor,Crea animaciones digitales y sprites para sus proyectos de programación de videojuegos personales
+215,20,2026-01-18,Prof. García,Investiga el uso de inteligencia artificial aplicada al comportamiento de personajes en videojuegos
+216,20,2026-02-01,Prof. López,Participa en competencias de programación y ocupa los primeros lugares con proyectos de game development
+217,20,2026-02-15,Orientación,Comparte proyectos indie en plataformas online y recibe retroalimentación de la comunidad de desarrolladores
+218,20,2026-03-01,Prof. Torres,Propuso crear un club de desarrollo de videojuegos y programación creativa en la institución
+219,20,2026-03-12,Coordinación Académica,Su dominio de game engines y lógica de programación lo posiciona como referente técnico del grupo

@@ -24,38 +24,30 @@ PALABRAS_POS = [
 ]
 
 PALABRAS_NEG = [
-    "desinterés", "dificultades", "timido", "timida","falta","problemas","conflicto","apatía","incumplimiento","excusas",
-    "derrotista","respeto","inapropiado","minimiza","ausencias","bajo rendimiento",
-    "desinterés", "problemas", "conflicto", "desmotivado", "bajo rendimiento", 
-    "distrae", "falta de motivación", "ausencia", "tardanza", "celular", "irrespetuoso",
+    "desinterés", "dificultades", "timido", "timida", "falta", "conflicto", "apatía", "incumplimiento", "excusas",
+    "derrotista", "inapropiado", "minimiza", "ausencias", "bajo rendimiento",
+    "desmotivado", "distrae", "falta de motivación", "ausencia", "tardanza", "irrespetuoso",
     "evasión", "copia", "plagio", "desafiante", "aislamiento", "fatiga", "somnolencia",
     "negativa", "frustración", "ira", "falta materiales", "incapacidad", "disruptivo",
-    "descuido", "promesas incumplidas", "justificaciones", "resistencia", "dificultad",
-    "concentración", "problemas personales", "agresivo", "pasivo-agresivo", "abandono",
-    "ausencia objetivos", "priorización equivocada", "historial conflictivo", "evasivo",
-    "deterioro", "contacto visual", "postura cerrada", "estrés", "apatía", "indiferencia",
+    "descuido", "promesas incumplidas", "resistencia",
+    "problemas personales", "agresivo", "pasivo-agresivo", "abandono",
+    "ausencia objetivos", "historial conflictivo", "evasivo",
+    "deterioro", "postura cerrada", "estrés", "indiferencia",
     "negligencia", "irresponsable", "inconstante", "inestable", "volátil", "impulsivo",
     "agresividad", "violencia", "acoso", "bullying", "marginación", "exclusión",
-    "discriminación", "prejuicio", "intolerante", "inflexible", "rígido", "terco",
-    "obstinado", "negación", "evasión", "engaño", "mentira", "fraude", "trampa",
-    "chantaje", "manipulación", "egoísmo", "individualismo", "narcisismo", "arrogancia",
-    "soberbia", "prepotencia", "autoritario", "dominante", "controlador", "posesivo",
-    "celoso", "envidioso", "rencoroso", "vengativo", "resentimiento", "amargura",
-    "pesimismo", "derrotista", "fatalista", "catastrófico", "ansiedad", "depresión",
-    "desánimo", "desaliento", "desesperanza", "abandono", "deserción", "desistimiento",
+    "discriminación", "intolerante", "engaño", "mentira", "fraude", "trampa",
+    "chantaje", "manipulación", "arrogancia", "soberbia", "prepotencia",
+    "celoso", "envidioso", "rencoroso", "vengativo", "resentimiento",
+    "pesimismo", "fatalista", "ansiedad", "depresión",
+    "desánimo", "desaliento", "desesperanza", "deserción", "desistimiento",
     "renuncia", "fracaso", "reprobación", "suspensión", "expulsión", "sanción",
-    "amonestación", "llamado atención", "advertencia", "alerta", "peligro", "riesgo",
-    "vulnerabilidad", "fragilidad", "debilidad", "limitación", "deficiencia",
-    "carencia", "necesidad", "dependencia", "inseguridad", "inestabilidad", "caos",
-    "desorden", "confusión", "desorientación", "perdido", "desubicado", "inadaptado",
+    "amonestación", "llamado atención",
+    "vulnerabilidad", "debilidad", "deficiencia",
+    "carencia", "dependencia", "inseguridad", "caos",
+    "desorden", "confusión", "desorientación", "perdido", "inadaptado",
     "incomprendido", "solitario", "aislado", "marginado", "excluido", "rechazado",
-    "ignorado", "invisible", "silenciado", "callado", "tímido", "retraído", "introvertido",
-    "inhibido", "bloqueado", "paralizado", "estancado", "regresión", "retroceso",
-    "decaimiento", "disminución", "reducción", "pérdida", "deterioro", "empeoramiento",
-    "agravamiento", "complicación", "crisis", "emergencia", "urgencia", "prioritario",
-    "intervención", "asistencia", "apoyo", "seguimiento", "monitoreo", "evaluación",
-    "diagnóstico", "tratamiento", "terapia", "rehabilitación", "recuperación",
-    "reinserción", "reincorporación", "reintegración", "normalización", "estabilización"
+    "ignorado", "bloqueado", "paralizado", "estancado", "regresión", "retroceso",
+    "decaimiento", "pérdida", "empeoramiento", "agravamiento", "complicación", "crisis"
 ]
 
 MODIFICADORES = [
@@ -73,10 +65,7 @@ RIESGO_EXPR = [
     "rendimiento decreciente", "motivación en caída", "interés disminuido",
     "participación reducida", "compromiso menguante", "esfuerzo decreciente",
     "asistencia irregular", "puntualidad deficiente", "organización pobre",
-    "planificación ausente", "metas indefinidas", "objetivos claros",
-    "visión futura", "proyección académica", "expectativas realistas",
-    "autoeficacia baja", "autoconcepto académico", "autoestima académica",
-    "pertenencia escolar", "vinculación institucional", "identidad estudiantil"
+    "planificación ausente", "metas indefinidas", "autoeficacia baja"
 ]
 PALABRAS_CIENCIA = [
     "experimento","cientifico","ciencia","laboratorio",
